@@ -1,0 +1,48 @@
+# Common vars
+availability_zone: melbourne-qh2-uom
+
+# Volume
+volumes:
+  - vol_name: worker-node-1-volume
+    vol_size: 50
+
+  - vol_name: worker-node-2-volume
+    vol_size: 50
+
+  - vol_name: worker-node-3-volume
+    vol_size: 50
+
+  - vol_name: couchdb-node-volume
+    vol_size: 100
+
+# Security group
+security_groups:
+  - name: couchdb1
+    description: "Couchdb security group"
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: docker_swarm
+    description: "Docker swarm security group"
+    protocol: tcp
+    port_range_min: 2376
+    port_range_max: 2377
+    remote_ip_prefix: 0.0.0.0/0
+
+# Instance
+instances:
+  - name: worker-node-1
+    volumes: ['worker-node-1-volume']
+
+  - name: worker-node-2
+    volumes: ['worker-node-2-volume']
+
+  #- name: couchdb-node
+  #  volumes: ['couchdb-node-volume']
+
+instance_image: 45225edb-66d8-4fd0-bf41-132a31a18166
+instance_key_name: seanli
+instance_flavor: uom.mse.2c9g
+default_security_groups: ['http', 'ssh']

@@ -1,0 +1,20 @@
+- hosts: localhost
+  vars_files:
+    - host_vars/nectar.yaml
+  gather_facts: true
+
+  roles:
+    - role: nectar-common
+    - role: nectar-images
+    - role: nectar-volume
+    - role: nectar-security-group
+    - role: nectar-instance
+
+- hosts: COMP90024
+  gather_facts: true
+
+  roles:
+    - role: install-common
+    - role: install-volumes
+    - role: install-docker
+    - role: install-couchdb

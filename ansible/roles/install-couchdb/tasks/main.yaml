@@ -1,0 +1,20 @@
+---
+- name: Create a volume
+  become: yes
+  docker_volume:
+    name: couchdb_volume
+
+- name: Create a container
+  become: yes
+  docker_container:
+    name: d1
+    image: lecd64/d1
+    state: started
+    pull: yes
+    env:
+      CMD: "{{ CMD }}"
+    ports:
+    - "5984:5984"
+
+    volumes:
+    - couchdb_volume:/opt/couchdb/data

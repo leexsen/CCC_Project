@@ -1,0 +1,57 @@
+---
+- name: Add Docker apt repository key
+  become: yes
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker apt repository and update apt cache
+  become: yes
+  apt_repository:
+    repo: "deb https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} stable"
+    mode: '644'
+    update_cache: yes
+    state: present
+
+- name: Install docker
+  become: yes
+  apt:
+    name: ['docker-ce', 'docker-compose']
+    state: latest
+    install_recommends: no
+    update_cache: yes
+
+- name: Install docker dependency
+  become: yes
+  pip:
+    name: ['docker']
+    state: latest
+
+- name: Create the docker proxy directory
+  become: yes
+  file:
+    path: /etc/systemd/system/docker.service.d
+    recurse: yes
+    state: directory
+
+- name: add docker proxy settings
+  become: yes
+  blockinfile:
+    create: yes
+    path: /etc/systemd/system/docker.service.d/http-proxy.conf
+    block: |
+      [Service]
+      Environment="http_proxy=http://wwwproxy.unimelb.edu.au:8000/"
+      Environment="https_proxy=http://wwwproxy.unimelb.edu.au:8000/"
+      Environment="no_proxy=localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar.org.au,.storage.unimelb.edu.au,.cloud.unimelb.edu.au"
+
+- name: force systemd to reread configs
+  become: yes
+  systemd:
+    daemon_reload: yes
+
+- name: restart service docker
+  become: yes
+  systemd:
+    name: docker
+    state: restarted
