@@ -1,0 +1,34 @@
+---
+# store the ip of the manager node
+- set_fact:
+    manager_node_ip: "{{ item }}"
+  when: hostvars[item].ansible_hostname == manager_node_hostname
+  loop: "{{ groups['COMP90024'] }}"
+
+- name: Init a new swarm with default parameters
+  become: yes
+  docker_swarm:
+    state: present
+  register: docker_swarm
+  when: ansible_hostname == manager_node_hostname
+
+# Add the swarm token to Ansible in-memory inventory
+# for sharing it between the manager node and worker nodes
+- name: Add the swarm token to Ansible in-memory inventory
+  add_host:
+    name: '{{ docker_swarm.swarm_facts.JoinTokens.Worker }}'
+    groups: SWARM-token
+  when: ansible_hostname == manager_node_hostname
+
+- debug:
+    msg: "{{groups['SWARM-token']}}"
+
+- name: Let other worker nodes except the worker node 1 to join swarm
+  become: yes
+  docker_swarm:
+    state: join
+    advertise_addr: "{{ ansible_host }}"
+    join_token: "{{ groups['SWARM-token'][0] }}"
+    remote_addrs: [ "{{ manager_node_ip }}:2377" ]
+  when: 
+    - ansible_hostname != manager_node_hostname

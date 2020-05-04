@@ -5,15 +5,23 @@ availability_zone: melbourne-qh2-uom
 volumes:
   - vol_name: worker-node-1-volume
     vol_size: 50
+    device: /dev/vdb
+    mountpoint: /var/lib/docker
 
   - vol_name: worker-node-2-volume
     vol_size: 50
+    device: /dev/vdb
+    mountpoint: /var/lib/docker
 
   - vol_name: worker-node-3-volume
     vol_size: 50
+    device: /dev/vdb
+    mountpoint: /var/lib/docker
 
   - vol_name: couchdb-node-volume
     vol_size: 100
+    device: /dev/vdb
+    mountpoint: /var/lib/docker
 
 # Security group
 security_groups:
@@ -31,6 +39,27 @@ security_groups:
     port_range_max: 2377
     remote_ip_prefix: 0.0.0.0/0
 
+  - name: docker_swarm
+    description: "Docker swarm security groupy"
+    protocol: tcp
+    port_range_min: 7946
+    port_range_max: 7946
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: docker_swarm
+    description: "Docker swarm security group"
+    protocol: udp
+    port_range_min: 7946
+    port_range_max: 7946
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: docker_swarm
+    description: "Docker swarm security group"
+    protocol: udp
+    port_range_min: 4789
+    port_range_max: 4789
+    remote_ip_prefix: 0.0.0.0/0
+
 # Instance
 instances:
   - name: worker-node-1
@@ -38,6 +67,9 @@ instances:
 
   - name: worker-node-2
     volumes: ['worker-node-2-volume']
+
+  - name: worker-node-3
+    volumes: ['worker-node-3-volume']
 
   #- name: couchdb-node
   #  volumes: ['couchdb-node-volume']

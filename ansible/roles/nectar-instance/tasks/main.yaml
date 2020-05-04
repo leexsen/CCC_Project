@@ -17,7 +17,7 @@
   register: os_instance
 
 #- debug:
-#    msg: "Instance {{ item.openstack.name }} has been created. IP address is {{ item.openstack.public_v4 }}"
+#    msg: "Instance {{ item.openstack. }} has been created. IP address is {{ item.openstack.public_v4 }}"
 #  loop: '{{ os_instance.results }}'
 #  when: item.openstack is defined
 
