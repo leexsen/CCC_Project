@@ -11,7 +11,7 @@
     group: ubuntu
     mode: '0600'
 
-- name: add proxy settings to /etc/environment
+- name: Add proxy settings to /etc/environment
   become: yes
   blockinfile:
     path: /etc/environment
@@ -19,6 +19,15 @@
       http_proxy=http://wwwproxy.unimelb.edu.au:8000/
       https_proxy=http://wwwproxy.unimelb.edu.au:8000/
       no_proxy=localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar.org.au,.storage.unimelb.edu.au,.cloud.unimelb.edu.au
+
+- name: Update DNS list
+  become: yes
+  blockinfile:
+    path: /etc/hosts
+    block: |
+      {{ item }} {{ hostvars[item].ansible_hostname }}
+    marker: "#ANSIBLE ADDED {{ item }}" # this is required for preventing the block from being overwritten on each iteration
+  loop: "{{ groups['COMP90024'] }}"  
 
 - name: Reboot the server
   become: yes
