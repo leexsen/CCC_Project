@@ -7,8 +7,8 @@
   copy:
     src: "~/.ssh/{{ instance_key_name }}"
     dest: "~/.ssh/"
-    owner: ubuntu
-    group: ubuntu
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
     mode: '0600'
 
 - name: Add proxy settings to /etc/environment

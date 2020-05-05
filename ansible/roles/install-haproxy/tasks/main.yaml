@@ -1,0 +1,19 @@
+---
+- name: Configure haproxy.cfg
+  become: yes
+  template:
+    src: haproxy.cfg.j2
+    dest: "~/haproxy.cfg"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+
+- name: Create a haproxy container
+  become: yes
+  docker_container:
+    name: haproxy
+    image: haproxy
+    ports:
+      - "4000:4000"
+    volumes:
+      - ~/:/usr/local/etc/haproxy
+  when: ansible_hostname == manager_node_hostname
