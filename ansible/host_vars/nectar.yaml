@@ -3,23 +3,23 @@ availability_zone: melbourne-qh2-uom
 
 # Volume
 volumes:
-  - vol_name: worker-node-1-volume
-    vol_size: 50
+  - vol_name: worker1_volume
+    vol_size: 62
     device: /dev/vdb
     mountpoint: /var/lib/docker
 
-  - vol_name: worker-node-2-volume
-    vol_size: 50
+  - vol_name: worker2_volume
+    vol_size: 62
     device: /dev/vdb
     mountpoint: /var/lib/docker
 
-  - vol_name: worker-node-3-volume
-    vol_size: 50
+  - vol_name: worker3_volume
+    vol_size: 62
     device: /dev/vdb
     mountpoint: /var/lib/docker
 
-  - vol_name: couchdb-node-volume
-    vol_size: 100
+  - vol_name: worker4_volume
+    vol_size: 62
     device: /dev/vdb
     mountpoint: /var/lib/docker
 
@@ -32,10 +32,31 @@ security_groups:
     port_range_max: 5984
     remote_ip_prefix: 0.0.0.0/0
 
+  - name: couchdb1
+    description: "Couchdb security group"
+    protocol: tcp
+    port_range_min: 4369
+    port_range_max: 4369
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: couchdb1
+    description: "Couchdb security group"
+    protocol: tcp
+    port_range_min: 9000
+    port_range_max: 9000
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: haproxy
+    description: "Haproxy security group"
+    protocol: tcp
+    port_range_min: 4000
+    port_range_max: 4000
+    remote_ip_prefix: 0.0.0.0/0
+
   - name: docker_swarm
     description: "Docker swarm security group"
     protocol: tcp
-    port_range_min: 2376
+    port_range_min: 2377
     port_range_max: 2377
     remote_ip_prefix: 0.0.0.0/0
 
@@ -62,19 +83,21 @@ security_groups:
 
 # Instance
 instances:
-  - name: worker-node-1
-    volumes: ['worker-node-1-volume']
+  - name: worker1
+    volumes: ['worker1_volume']
 
-  - name: worker-node-2
-    volumes: ['worker-node-2-volume']
+  - name: worker2
+    volumes: ['worker2_volume']
 
-  - name: worker-node-3
-    volumes: ['worker-node-3-volume']
+  - name: worker3
+    volumes: ['worker3_volume']
 
-  #- name: couchdb-node
-  #  volumes: ['couchdb-node-volume']
+  #- name: worker4
+  #  volumes: ['worker4_volume']
 
 instance_image: 45225edb-66d8-4fd0-bf41-132a31a18166
 instance_key_name: seanli
 instance_flavor: uom.mse.2c9g
 default_security_groups: ['http', 'ssh']
+
+manager_node_hostname: "worker1"

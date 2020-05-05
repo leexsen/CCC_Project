@@ -1,2 +1,3 @@
----
-CMD: "/opt/couchdb/bin/couchdb"
+cookies: "thisisacookie"
+uuid: "0a959b648227248afc2ac26ccdf345a6"
+httpd_secret: "92de07df7e7a3f644808cef90a7cc0d91"
