@@ -1,1 +1,1 @@
-FLASK_APP=Web.py
+FLASK_APP=app.py
