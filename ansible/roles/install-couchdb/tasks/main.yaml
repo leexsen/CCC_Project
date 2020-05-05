@@ -39,17 +39,17 @@
   become: yes
   shell: docker cp /tmp/vm.args helper:/data && docker cp /tmp/local.ini helper:/data && docker rm helper
 
+- debug:
+    msg: "There are {{ groups['COMP90024']|length }} nodes"
 
 - name: Create couchdb replacted service
   become: yes
   shell: docker service create \
-            --replicas 3 \
+            --replicas "{{ groups['COMP90024']|length }}" \
             --name couchdb \
             --publish mode=host,target=5984,published=5984 \
             --publish mode=host,target=4369,published=4369 \
             --publish mode=host,target=9000,published=9000 \
-            -e COUCHDB_USER=admin \
-            -e COUCHDB_PASSWORD=password \
             -e COUCHDB_ARGS_FILE=/opt/couchdb/etc/local.d/vm.args \
             --mount type=volume,source=couchdb_volume,destination=/opt/couchdb/data \
             --mount type=bind,source=/etc/hosts,destination=/etc/hosts,ro=true \
@@ -57,45 +57,22 @@
             -d couchdb
   when: ansible_hostname == manager_node_hostname
 
-# - name: Create a container
-#   become: yes
-#   docker_container:
-#     name: d1
-#     image: lecd64/d1
-#     state: started
-#     pull: yes
-#     env:
-#       CMD: "{{ CMD }}"
-#     ports:
-#     - "5984:5984"
+- name: Generate form_couchdb_cluster.sh
+  template:
+    src: form_couchdb_cluster.sh.j2
+    dest: "~/form_couchdb_cluster.sh"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0755
+  when: ansible_hostname == manager_node_hostname
 
-#     volumes:
-#     - couchdb_volume:/opt/couchdb/data
+- name: Form a couchdb cluster
+  shell: ~/form_couchdb_cluster.sh
+  args:
+    executable: /bin/bash
+  when: ansible_hostname == manager_node_hostname
+  register: output
 
-
-# for node in "${nodes[@]}" 
-#   do
-#     docker run\
-#       --name couchdb${node}\
-#       -v 
-#       --env COUCHDB_USER=${user}\
-#       --env COUCHDB_PASSWORD=${pass}\
-#       --env NOOENAME=couchdb@${node}\
-#       --env COUCHDB_SECRET=${cookie}\
-#       --env ERL_FLAGS="-setcookie \"${cookie}\" -name \"couchdb@${node}\""\
-#       ibmcom/couchdb3:${VERSION}
-# done
-
-# sudo docker service create \
-#             --replicas 3 \
-#             --name couchdb \
-#             --publish mode=host,target=5984,published=5984 \
-#             --publish mode=host,target=4369,published=4369 \
-#             --publish mode=host,target=9000,published=9000 \
-#             -e COUCHDB_USER=admin \
-#             -e COUCHDB_PASSWORD=password \
-#             -e COUCHDB_ARGS_FILE=/opt/couchdb/etc/local.d/vm.args \
-#             --mount type=volume,source=couchdb_volume,destination=/opt/couchdb/data \
-#             --mount type=bind,source=/etc/hosts,destination=/etc/hosts,ro=true \
-#             --mount type=volume,source=couchdb_config_volume,destination=/opt/couchdb/etc/local.d \
-#             -d couchdb
+- debug:
+    msg: "{{ output.stdout }}"
+  when: ansible_hostname == manager_node_hostname

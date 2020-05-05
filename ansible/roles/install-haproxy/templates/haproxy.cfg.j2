@@ -30,8 +30,10 @@ frontend http-in
 backend couchdbs
     option httpchk GET /_up
     http-check disable-on-404
+    cookie mycookies insert indirect nocache
+
     {% for host in groups['COMP90024'] %}
 
-    server {{ hostvars[host].ansible_hostname }} {{ host }}:5984 check inter 5s
+    server {{ hostvars[host].ansible_hostname }} {{ host }}:5984 check inter 5s check cookie {{ hostvars[host].ansible_hostname }}
 
     {% endfor %}
