@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.8.2-alpine
 
 ARG http_proxy=http://wwwproxy.unimelb.edu.au:8000/
 ARG https_proxy=http://wwwproxy.unimelb.edu.au:8000/

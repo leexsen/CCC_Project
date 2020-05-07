@@ -25,21 +25,21 @@ volumes:
 
 # Security group
 security_groups:
-  - name: couchdb1
+  - name: couchdb
     description: "Couchdb security group"
     protocol: tcp
     port_range_min: 5984
     port_range_max: 5984
     remote_ip_prefix: 0.0.0.0/0
 
-  - name: couchdb1
+  - name: couchdb
     description: "Couchdb security group"
     protocol: tcp
     port_range_min: 4369
     port_range_max: 4369
     remote_ip_prefix: 0.0.0.0/0
 
-  - name: couchdb1
+  - name: couchdb
     description: "Couchdb security group"
     protocol: tcp
     port_range_min: 9000

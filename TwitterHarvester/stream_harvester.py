@@ -12,11 +12,12 @@ consumer_key = "iznF9PGZDSeM7xHCEvJsZ2d0g"
 consumer_secret = "vTE9AL3BaHTWjmerkBRnHZ66QvvQgz74WMwkOSBAX90UN3nfHX"
 
 db_name = 'twitter_stream_data_melbourne'
-couchdb_url = 'http://admin:admin123@worker1:4000'
+couchdb_url = 'http://admin:admin123@worker1:4000/'
 
 #This is a basic listener that just prints received tweets to stdout.
 class StdOutListener(StreamListener):
     def __init__(self):
+        super().__init__()
         self.db = couchDB(couchdb_url, db_name)
 
     def on_data(self, data):
