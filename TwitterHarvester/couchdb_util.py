@@ -2,13 +2,17 @@ import couchdb
 
 class couchDB():
 
-    def __init__(self, server_url, db_name=None):
+    def __init__(self, server_url, db_name=None, cookie=None):
         self.server_url = server_url
         self.couchserver = couchdb.Server(self.server_url)
         self.db_name = db_name
+
+        if cookie is not None:
+            self.couchserver.resource.headers["Cookie"] = cookie
+
         if db_name is not None:
             self.create_db(db_name)
-            self.db=self.couchserver[db_name]
+            self.db = self.couchserver[db_name]
         else:
             self.db = None
 
@@ -53,8 +57,6 @@ class couchDB():
         for item in self.db.view('_all_docs', include_docs=True):
             all_data.append(item['doc'])
         return all_data
-
-
 
 if __name__ == '__main__':
     # Below can be used for CouchDB test
