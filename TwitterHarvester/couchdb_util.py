@@ -5,11 +5,9 @@ class couchDB():
     def __init__(self, server_url, db_name=None):
         self.server_url = server_url
         self.couchserver = couchdb.Server(self.server_url)
-        #self.db_name = db_name
-
+        self.db_name = db_name
         if db_name is not None:
-            self.create_db(db_name)
-            self.db = self.couchserver[db_name]
+            self.db=self.couchserver[db_name]
         else:
             self.db = None
 
@@ -70,4 +68,4 @@ if __name__ == '__main__':
             }
     db.save_data_tweet(tweet)
     print(db.get_data_by_key('1251815425601605632'))
-    print(db.get_all_data())
+    print(db.get_all_data()) 
