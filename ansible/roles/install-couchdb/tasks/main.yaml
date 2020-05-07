@@ -3,7 +3,6 @@
   become: yes
   docker_volume:
     name: couchdb_volume
-    recreate: always
     state: present
 
 - name: Create a volume for storing couchdb config
