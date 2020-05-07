@@ -11,13 +11,17 @@ access_token_secret = "2FMzKYXE7h5SW4UrGJ2nLtLjsTFSDRDAd2aCzuREv6fal"
 consumer_key = "iznF9PGZDSeM7xHCEvJsZ2d0g"
 consumer_secret = "vTE9AL3BaHTWjmerkBRnHZ66QvvQgz74WMwkOSBAX90UN3nfHX"
 
+db_name = 'twitter_stream_data_melbourne'
+couchdb_url = 'http://admin:admin123@worker1:4000'
+
 #This is a basic listener that just prints received tweets to stdout.
 class StdOutListener(StreamListener):
+    def __init__(self):
+        self.db = couchDB(couchdb_url, db_name)
 
     def on_data(self, data):
-        db = couchDB('http://admin:admin123@172.26.132.59:5984/', db_name)
         tweet_json = json.loads(data)
-        db.save_data_tweet(tweet_json)
+        self.db.save_data_tweet(tweet_json)
         return True
 
     def on_error(self, status):
@@ -41,5 +45,4 @@ def harvest_stream_tweets():
 
 
 if __name__ == '__main__':
-    db_name = 'twitter_stream_data_melbourne'
     harvest_stream_tweets()

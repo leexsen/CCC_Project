@@ -5,9 +5,11 @@ class couchDB():
     def __init__(self, server_url, db_name=None):
         self.server_url = server_url
         self.couchserver = couchdb.Server(self.server_url)
-        self.db_name = db_name
+        #self.db_name = db_name
+
         if db_name is not None:
-            self.db=self.couchserver[db_name]
+            self.create_db(db_name)
+            self.db = self.couchserver[db_name]
         else:
             self.db = None
 
