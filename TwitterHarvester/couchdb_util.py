@@ -7,6 +7,7 @@ class couchDB():
         self.couchserver = couchdb.Server(self.server_url)
         self.db_name = db_name
         if db_name is not None:
+            self.create_db(db_name)
             self.db=self.couchserver[db_name]
         else:
             self.db = None
