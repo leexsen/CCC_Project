@@ -1,0 +1,133 @@
+{
+  "_id": "1256116424755445760",
+  "_rev": "1-0ce05cb586299baecfc84ed3da6b3385",
+  "created_at": "Fri May 01 07:01:07 +0000 2020",
+  "id": 1256116424755445800,
+  "id_str": "1256116424755445760",
+  "text": "@Mumdeep @VodafoneAU Poor form.",
+  "display_text_range": [
+    21,
+    31
+  ],
+  "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+  "truncated": false,
+  "in_reply_to_status_id": 1256116328705912800,
+  "in_reply_to_status_id_str": "1256116328705912832",
+  "in_reply_to_user_id": 558279290,
+  "in_reply_to_user_id_str": "558279290",
+  "in_reply_to_screen_name": "Mumdeep",
+  "user": {
+    "id": 6151232,
+    "id_str": "6151232",
+    "name": "Rachel Devine",
+    "screen_name": "sesameellis",
+    "location": "ÜT: -37.797894,144.951517",
+    "url": "http://www.sesameellis.com",
+    "description": "based on actual events. Otherwise known as The Unlikely Cricket Mom. 🇺🇸/🇦🇺",
+    "translator_type": "none",
+    "protected": false,
+    "verified": false,
+    "followers_count": 3835,
+    "friends_count": 1611,
+    "listed_count": 305,
+    "favourites_count": 10555,
+    "statuses_count": 14496,
+    "created_at": "Sat May 19 01:33:56 +0000 2007",
+    "utc_offset": null,
+    "time_zone": null,
+    "geo_enabled": true,
+    "lang": null,
+    "contributors_enabled": false,
+    "is_translator": false,
+    "profile_background_color": "FFFFFF",
+    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme3/bg.gif",
+    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme3/bg.gif",
+    "profile_background_tile": true,
+    "profile_link_color": "FCD450",
+    "profile_sidebar_border_color": "FFFFFF",
+    "profile_sidebar_fill_color": "A7A9AC",
+    "profile_text_color": "EFF1F3",
+    "profile_use_background_image": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/499412665630871552/grjCvobX_normal.jpeg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/499412665630871552/grjCvobX_normal.jpeg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/6151232/1542071233",
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": null,
+    "follow_request_sent": null,
+    "notifications": null
+  },
+  "geo": null,
+  "coordinates": null,
+  "place": {
+    "id": "01864a8a64df9dc4",
+    "url": "https://api.twitter.com/1.1/geo/id/01864a8a64df9dc4.json",
+    "place_type": "city",
+    "name": "Melbourne",
+    "full_name": "Melbourne, Victoria",
+    "country_code": "AU",
+    "country": "Australia",
+    "bounding_box": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            144.593742,
+            -38.433859
+          ],
+          [
+            144.593742,
+            -37.511274
+          ],
+          [
+            145.512529,
+            -37.511274
+          ],
+          [
+            145.512529,
+            -38.433859
+          ]
+        ]
+      ]
+    },
+    "attributes": {}
+  },
+  "contributors": null,
+  "is_quote_status": false,
+  "quote_count": 0,
+  "reply_count": 0,
+  "retweet_count": 0,
+  "favorite_count": 0,
+  "entities": {
+    "hashtags": [],
+    "urls": [],
+    "user_mentions": [
+      {
+        "screen_name": "Mumdeep",
+        "name": "Ash Kaye",
+        "id": 558279290,
+        "id_str": "558279290",
+        "indices": [
+          0,
+          8
+        ]
+      },
+      {
+        "screen_name": "VodafoneAU",
+        "name": "Vodafone Australia",
+        "id": 18186920,
+        "id_str": "18186920",
+        "indices": [
+          9,
+          20
+        ]
+      }
+    ],
+    "symbols": []
+  },
+  "favorited": false,
+  "retweeted": false,
+  "filter_level": "low",
+  "lang": "en",
+  "timestamp_ms": "1588316467833"
+}
