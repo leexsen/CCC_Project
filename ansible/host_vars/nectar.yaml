@@ -25,21 +25,21 @@ volumes:
 
 # Security group
 security_groups:
-  - name: couchdb1
+  - name: couchdb
     description: "Couchdb security group"
     protocol: tcp
     port_range_min: 5984
     port_range_max: 5984
     remote_ip_prefix: 0.0.0.0/0
 
-  - name: couchdb1
+  - name: couchdb
     description: "Couchdb security group"
     protocol: tcp
     port_range_min: 4369
     port_range_max: 4369
     remote_ip_prefix: 0.0.0.0/0
 
-  - name: couchdb1
+  - name: couchdb
     description: "Couchdb security group"
     protocol: tcp
     port_range_min: 9000
@@ -61,7 +61,7 @@ security_groups:
     remote_ip_prefix: 0.0.0.0/0
 
   - name: docker_swarm
-    description: "Docker swarm security groupy"
+    description: "Docker swarm security group"
     protocol: tcp
     port_range_min: 7946
     port_range_max: 7946
@@ -92,8 +92,8 @@ instances:
   - name: worker3
     volumes: ['worker3_volume']
 
-  #- name: worker4
-  #  volumes: ['worker4_volume']
+  - name: worker4
+    volumes: ['worker4_volume']
 
 instance_image: 45225edb-66d8-4fd0-bf41-132a31a18166
 instance_key_name: seanli
