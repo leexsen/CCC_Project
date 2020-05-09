@@ -13,7 +13,7 @@ consumer_key = "iznF9PGZDSeM7xHCEvJsZ2d0g"
 consumer_secret = "vTE9AL3BaHTWjmerkBRnHZ66QvvQgz74WMwkOSBAX90UN3nfHX"
 
 couchdb_url = 'http://admin:admin123@worker1:4000/'
-db_name = 'twitter_stream_data_melbourne'
+db_name = 'imported_twitter_melbourne'
 
 masternode_hostname = 'worker1'
 
