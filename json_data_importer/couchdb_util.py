@@ -2,13 +2,10 @@ import couchdb
 
 class couchDB():
 
-    def __init__(self, server_url, db_name=None, cookie=None):
+    def __init__(self, server_url, db_name=None):
         self.server_url = server_url
         self.couchserver = couchdb.Server(self.server_url)
         self.db_name = db_name
-
-        if cookie is not None:
-            self.couchserver.resource.headers["Cookie"] = cookie
 
         if db_name is not None:
             self.create_db(db_name)
