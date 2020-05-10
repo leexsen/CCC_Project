@@ -1,42 +1,26 @@
 #Import the necessary methods from tweepy library
-import json, requests
+import json
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 from couchdb_util import couchDB
-from python_hosts.hosts import Hosts
 
 #Variables that contains the user credentials to access Twitter API
-access_token = "1252819926017904641-aUMOOcBgP9gfybldsREQ0Rgn6jHiSJ"
-access_token_secret = "2FMzKYXE7h5SW4UrGJ2nLtLjsTFSDRDAd2aCzuREv6fal"
-consumer_key = "iznF9PGZDSeM7xHCEvJsZ2d0g"
-consumer_secret = "vTE9AL3BaHTWjmerkBRnHZ66QvvQgz74WMwkOSBAX90UN3nfHX"
+access_token = "1250405129175437312-8OczLcJHF6SJjkLLBKHnpL7HPDIX4J"
+access_token_secret = "q999mxwFxgqmiE2cJRX12nrFQvFDrB7sJJPxob1wfajdT"
+consumer_key = "o8JwBJas09Yu6zyedfW98JyZU"
+consumer_secret = "H3G9HwO9tnejwfhZVhh3kwIFFUROk9KFHUgFc24N5B3sZ3HwHQ"
 
-couchdb_url = 'http://admin:admin123@worker1:4000/'
-db_name = 'twitter_stream_data_melbourne'
+server_url = 'http://admin:admin123@worker1:4000/'
+db_name = 'imported_twitter_melbourne'
 
 masternode_hostname = 'worker1'
 
 #This is a basic listener that just prints received tweets to stdout.
 class StdOutListener(StreamListener):
-    def __init__(self, hosts):
+    def __init__(self):
         super().__init__()
-
-        # this is to ensure the load balancer will direct us to the same node
-        # as before. In other word, this is to let the load balancer to us to a
-        # consistent worker node all the time.
-
-        masternode_ip = hosts[masternode_hostname]
-        server_url = couchdb_url.replace(masternode_hostname, masternode_ip)
-
-        session = requests.Session()
-        response = session.get(server_url)
-        cookies = response.cookies.get_dict()
-        cookie = '{}={}'.format('mycookies', cookies['mycookies'])
-
-        print('Connected to ' + cookies['mycookies'])
-
-        self.db = couchDB(server_url, db_name, cookie)
+        self.db = couchDB(server_url, db_name)
 
     def on_data(self, data):
         tweet_json = json.loads(data)
@@ -49,27 +33,12 @@ class StdOutListener(StreamListener):
     def on_timeout(self):
         return True
 
-# This will read /etc/hosts for resolving hostnames
-def init_hosts():
-    hosts = {}
-    host_entries = Hosts(Hosts.determine_hosts_path()).entries
-
-    for entry in host_entries:
-        if entry.names is None:
-            continue
-
-        name = entry.names[0]
-        hosts[name] = entry.address
-
-    return hosts
-
 def harvest_stream_tweets():
     # This handles Twitter authetification and the connection to Twitter Streaming API
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
-    hosts = init_hosts()
 
-    stream = Stream(auth, StdOutListener(hosts))
+    stream = Stream(auth, StdOutListener())
     
     while True:
         try:

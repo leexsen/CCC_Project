@@ -1,6 +1,6 @@
 from mpi4py import MPI
 from couchdb_util import couchDB
-import os, sys, json, array, requests
+import os, sys, json, array
 
 server_url = 'http://admin:admin123@172.26.132.238:4000/'
 db_name = 'imported_twitter_melbourne'
@@ -67,22 +67,15 @@ class ComputeNode:
 
         self.file = TwitterFile(filename)
 
-        session = requests.Session()
-        response = session.get(server_url)
-        cookies = response.cookies.get_dict()
-        cookie = '{}={}'.format('mycookies', cookies['mycookies'])
-
-        print('Connected to ' + cookies['mycookies'])
-
         if self.rank == 0:
-            self.db = couchDB(server_url, db_name, cookie)
+            self.db = couchDB(server_url, db_name)
 
             for i in range(1, self.size):
                 self.comm.send(0, dest=i)
 
         else:
             self.comm.recv(source=0)
-            self.db = couchDB(server_url, db_name, cookie)
+            self.db = couchDB(server_url, db_name)
 
     def compute_start_end(self):
         total_rows = self.file.get_total_rows()
