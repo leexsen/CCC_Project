@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+            
+    <meta charset="UTF-8">
+            <title></title>
+        </head>
+    <style type="text/css">
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        position: absolute;
+        height: 90px;
+        line-height: 90px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        -webkit-box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
+        box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
+        padding: 0 30px;
+        background: #fff;
+    }
+
+    /*footer {
+            position: absolute;
+            height: 60px;
+            line-height: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            text-align: center;
+            background: #fff;
+        }*/
+
+    .title,
+    .nav,
+    .username-show {
+        float: left;
+    }
+
+    .title {
+        font-weight: bold;
+        color:rgb(34, 87, 185);
+    }
+
+    .nav {
+        margin-left: 60px;
+    }
+    
+    .nav ul {
+        list-style: none;
+        padding-left:0;
+        /* border: 1px solid gray; */
+        display : inline-block;
+        padding:0px;
+        border-radius: 5px;
+    }
+
+    .nav ul li {
+        display: inline;
+        padding:30px;
+    }
+
+    .nav ul li:hover {
+        
+        background-color : #f5f5f5;
+        cursor:pointer;
+        border-radius: 5px;
+        color: rgb(140, 133, 235);
+        font-weight: bold;
+    }
+
+    .section-right {
+        float: right;
+    }
+
+    .aside {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        color: #FFF;
+
+        width: 228px;
+        background: #1A293A;
+        padding: 105px 30px 0px 36px;
+    }
+
+    .article {
+        position: absolute;
+        left: 280px;
+        /*如果侧边栏有宽度*/
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 68px 20px;
+        overflow: auto;
+        /*超出滚动显示*/
+        background: #f5f5f5;
+    }
+</style>
+
+    
+
+<body>
+        <header class="header text-size24">
+            <hgroup class="title">Cluster and Cloud Computing</hgroup>
+<!--             <nav class="nav"><a href="map_1.html">1st Topic</a></nav>
+            <nav class="nav"><a href="map_2.html">2nd Topic</a></nav>
+            <nav class="nav"><a href="map_3.html">3rd Topic</a></nav> -->
+            <nav class="nav">
+                <ul>
+                    <li>First</li>
+                    <li>Second</li>
+                    <li>Third</li>
+             </ul>
+            </nav>
+        </header>
+        <section>
+            <aside class="aside"> 
+
+            </aside>
+            <article class="article">
+
+            </article>
+        </section>
+        
+<!--<footer>尾部</footer>-->
+    </body>
+
+</html>

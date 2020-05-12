@@ -9,17 +9,65 @@
       body,
       #viewDiv {
         padding: 0;
-        margin: 0;
+        margin-left: 0;
         height: 100%;
         width: 100%;
+        float: right;
       }
+      ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+        overflow: hidden;/*清除浮动，子元素设置浮动不能将父元素撑开*/
+      }
+      li{
+      float: left;
+      }
+      li a{
+      display: block;
+      color:#444;
+      text-decoration: none;
+      padding:8px 16px;
+      }
+      li :hover{
+        background-color:#ccc;
+          color: white;
+      }
+      
+      #figure1 {
+        margin: 5px 0px;
+        width: 150px;
+        height: 150px;
+        border: 1px dashed #46df46;
+        background-color: rgb(185, 115, 115);
+        text-align: center;
+      }
+      #figure2 {
+        margin: 10px 0px;
+        width: 150px;
+        height: 150px;
+        border: 1px dashed #009900;
+        background-color: #8fe08f;
+        text-align: center;
+      }
+      #figure3 {
+        margin: 10px 00px;
+        width: 150px;
+        height: 150px;
+        border: 1px dashed #009900;
+        background-color: #34b5be;
+        text-align: center;
+      }
+      
+      
     </style>
     <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
     <script src="https://js.arcgis.com/4.15/"></script>
     <script>
-      require(["esri/Map", "esri/views/MapView"], function(Map, MapView) {
+      require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], function(Map, MapView, FeatureLayer) {
         var map = new Map({
-          basemap: "streets"
+          basemap: "gray"
         });
         var view = new MapView({
           container: "viewDiv", // Reference to the scene div created in step 5
@@ -27,10 +75,23 @@
           zoom: 10, // Sets zoom level based on level of detail (LOD)
           center: [144.96, -37.81] // Sets center point of view using longitude,latitude
         });
+
+        var suburbLayer = new FeatureLayer({
+          url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb/FeatureServer/0",
       });
+      map.add(suburbLayer,0);
+      })
     </script>
+    
   </head>
   <body>
+    <ul>
+      <li><a href="#">First</a></li>
+      <li><a href="#">Second</a></li>
+      <li><a href="#">Third</a></li>
+    </ul>
     <div id="viewDiv"></div>
+
   </body>
+
 </html>
