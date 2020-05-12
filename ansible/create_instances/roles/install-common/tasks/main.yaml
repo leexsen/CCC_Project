@@ -1,0 +1,49 @@
+---
+- name: Gather facts of remote host
+  setup:
+    gather_subset: all
+
+- name: Copy SSH key to the instances
+  copy:
+    src: "~/.ssh/{{ instance_key_name }}"
+    dest: "~/.ssh/"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Add proxy settings to /etc/environment
+  become: yes
+  blockinfile:
+    path: /etc/environment
+    block: |
+      http_proxy=http://wwwproxy.unimelb.edu.au:8000/
+      https_proxy=http://wwwproxy.unimelb.edu.au:8000/
+      no_proxy=localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar.org.au,.storage.unimelb.edu.au,.cloud.unimelb.edu.au
+
+- name: Update /etc/hosts
+  become: yes
+  blockinfile:
+    path: /etc/hosts
+    block: |
+      {{ manager_node_ip }} {{ manager_node_hostname }}
+
+- name: Reboot the server
+  become: yes
+  reboot:
+
+- name: Install dependencies
+  tags: always
+  become: yes
+  apt:
+    name: ['apt-transport-https', 'build-essential', 'ca-certificates', 'curl', 'git', 'python3-dev',
+           'python3-pip', 'python3-setuptools', 'software-properties-common', 'vim', 'gnupg-agent']
+    state: latest
+    install_recommends: no
+    update_cache: yes
+
+- name: Update pip
+  tags: always
+  become: yes
+  pip:
+    name: ['pip']
+    state: latest

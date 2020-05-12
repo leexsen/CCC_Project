@@ -1,0 +1,9 @@
+---
+- name: Create harvester replacted service
+  become: yes
+  shell: docker service create \
+            --replicas 1 \
+            --name harvester \
+            --mount type=bind,source=/etc/hosts,destination=/etc/hosts,ro=true \
+            -d lecd64/harvester
+  when: ansible_hostname == manager_node_hostname

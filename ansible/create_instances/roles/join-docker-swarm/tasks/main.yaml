@@ -1,0 +1,11 @@
+---
+- debug:
+    msg: "{{ swarm_join_token }}"
+
+- name: Join the existing swarm cluster
+  become: yes
+  docker_swarm:
+    state: join
+    advertise_addr: "{{ ansible_host }}"
+    join_token: "{{ swarm_join_token }}"
+    remote_addrs: [ "{{ manager_node_ip }}:2377" ]

@@ -1,0 +1,81 @@
+# Common vars
+availability_zone: melbourne-qh2-uom
+
+# Volume
+volumes:
+  - vol_name: worker5_volume
+    vol_size: 62
+    device: /dev/vdb
+    mountpoint: /var/lib/docker
+
+# Security group
+security_groups:
+  - name: couchdb
+    description: "Couchdb security group"
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: couchdb
+    description: "Couchdb security group"
+    protocol: tcp
+    port_range_min: 4369
+    port_range_max: 4369
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: couchdb
+    description: "Couchdb security group"
+    protocol: tcp
+    port_range_min: 9000
+    port_range_max: 9000
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: haproxy
+    description: "Haproxy security group"
+    protocol: tcp
+    port_range_min: 4000
+    port_range_max: 4000
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: docker_swarm
+    description: "Docker swarm security group"
+    protocol: tcp
+    port_range_min: 2377
+    port_range_max: 2377
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: docker_swarm
+    description: "Docker swarm security group"
+    protocol: tcp
+    port_range_min: 7946
+    port_range_max: 7946
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: docker_swarm
+    description: "Docker swarm security group"
+    protocol: udp
+    port_range_min: 7946
+    port_range_max: 7946
+    remote_ip_prefix: 0.0.0.0/0
+
+  - name: docker_swarm
+    description: "Docker swarm security group"
+    protocol: udp
+    port_range_min: 4789
+    port_range_max: 4789
+    remote_ip_prefix: 0.0.0.0/0
+
+# Instance
+instances:
+  - name: worker5
+    volumes: []
+
+instance_image: 45225edb-66d8-4fd0-bf41-132a31a18166
+instance_key_name: seanli
+instance_flavor: uom.general.2c8g
+default_security_groups: ['http', 'ssh']
+
+manager_node_hostname: "worker1"
+manager_node_ip: "172.26.132.238"
+swarm_join_token: "SWMTKN-1-3rvq7ed660xbdu9ejzr4cmql6mk770asy056xbak1c71bn65fj-adhy9j51smt8j3qtun9n81io5"
