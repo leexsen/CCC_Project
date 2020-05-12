@@ -22,3 +22,4 @@
     - role: create-docker-swarm
     - role: install-couchdb
     - role: install-haproxy
+    - role: install-harvester
