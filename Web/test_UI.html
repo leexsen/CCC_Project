@@ -27,7 +27,7 @@
         -webkit-box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
         box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
         padding: 0 30px;
-        background: rgb(255, 255, 245);
+        background: rgb(223, 223, 223);
     }
 
     /*footer {
@@ -73,7 +73,7 @@
 
     .nav ul li:hover {
         
-        background-color : #f5f5f5;
+        background-color : #b6b6b6;
         cursor:pointer;
         border-radius: 5px;
         color: rgb(140, 133, 235);
@@ -115,7 +115,7 @@
     }
 
     .aside ul li:hover{
-        background-color : #874ef0;
+        background-color : #403750;
         cursor:pointer;
         border-radius: 5px;
         /* color: rgb(83, 158, 146); */
@@ -133,7 +133,7 @@
         right: 0;
         top: 0;
         bottom: 0;
-        padding: 138px 0px 0px 15px;
+        padding: 120px 0px 0px 15px;
         overflow: auto;
         background: #f5f5f5;
     }
@@ -143,14 +143,12 @@
     }
 
     .article chartContainer {
-        padding-top: 120px;
+        padding-top: 115px;
         /* margin-top: -120px; */
 
         height: 400px;
         width: 100%;
     }
-
-    
 
     #mapviewDiv {
         width:95%;
@@ -159,7 +157,7 @@
     }
 
     #chartdiv1 {
-        width: 100%;
+        width: 95%;
         height: 300px;
     }
 
@@ -208,6 +206,7 @@
     
     var chart = am4core.create("chartdiv1", am4charts.XYChart);
     
+    // modify data here to draw the chart :)
     var data = [];
     var value = 50;
     for(var i = 0; i < 300; i++){
@@ -276,12 +275,12 @@
             <article class="article">
                 <div id="mapviewDiv"></div>
                 <div id="chartContainer1",class="chartContainer">
-                    <h2 style="padding-top: 100px;" id="section-1">The relation between Australian and Australian Food</h2>
+                    <h2 style="padding-top: 115px;" id="section-1">The relation between Australian and Australian Food</h2>
                     <div id="chartdiv1",class="chartdiv"></div>
                 </div>
 
                 <div id="chartContainer2",class="chartContainer">
-                    <h2 id="section-2">Chinese Food</h2>
+                    <h2 id="section-2", style="padding-top:115px;">Chinese Food</h2>
                     <!-- <div id="chartdiv1",class="chartdiv"></div> -->
                 </div>
                 
