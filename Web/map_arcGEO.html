@@ -59,30 +59,7 @@
         background-color: #34b5be;
         text-align: center;
       }
-      
-      
     </style>
-    <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
-    <script src="https://js.arcgis.com/4.15/"></script>
-    <script>
-      require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], function(Map, MapView, FeatureLayer) {
-        var map = new Map({
-          basemap: "gray"
-        });
-        var view = new MapView({
-          container: "viewDiv", // Reference to the scene div created in step 5
-          map: map, // Reference to the map object created before the scene
-          zoom: 10, // Sets zoom level based on level of detail (LOD)
-          center: [144.96, -37.81] // Sets center point of view using longitude,latitude
-        });
-
-        var suburbLayer = new FeatureLayer({
-          url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb/FeatureServer/0",
-      });
-      map.add(suburbLayer,0);
-      })
-    </script>
-    
   </head>
   <body>
     <ul>
@@ -91,7 +68,27 @@
       <li><a href="#">Third</a></li>
     </ul>
     <div id="viewDiv"></div>
-
   </body>
-
 </html>
+
+
+<link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
+<script src="https://js.arcgis.com/4.15/"></script>
+<script>
+  require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], function(Map, MapView, FeatureLayer) {
+    var map = new Map({
+      basemap: "gray"
+    });
+    var view = new MapView({
+      container: "viewDiv", // Reference to the scene div created in step 5
+      map: map, // Reference to the map object created before the scene
+      zoom: 10, // Sets zoom level based on level of detail (LOD)
+      center: [144.96, -37.81] // Sets center point of view using longitude,latitude
+    });
+
+    var suburbLayer = new FeatureLayer({
+      url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb/FeatureServer/0",
+  });
+  map.add(suburbLayer,0);
+  })
+</script>
