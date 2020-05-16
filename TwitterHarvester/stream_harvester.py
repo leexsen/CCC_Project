@@ -47,10 +47,8 @@ def harvest_stream_tweets():
     stream = Stream(auth, StdOutListener())
     while True:
         try:
-            # Streams do not terminate unless the connection is closed, blocking the thread.
-            # Tweepy offers a convenient is_async parameter on filter so the stream will run on a new thread.
             # [144.8889, -37.8917, 145.0453, -37.7325]
-            stream.filter(locations=[144.3336, -38.5030, 145.8784, -37.1751], languages=['en'], is_async=True)
+            stream.filter(locations=[144.3336, -38.5030, 145.8784, -37.1751], languages=['en'])
         except Exception as e:
             print(e)
 
