@@ -8,7 +8,7 @@
                 height: 100%;
                 margin: 0;
             }
-        
+    
             * {
                 margin: 0;
                 padding: 0;
@@ -82,10 +82,6 @@
                 text-decoration: none;
             }
 
-            /* #currentPage {
-
-            } */
-        
             .section-right {
                 float: right;
             }
@@ -99,8 +95,7 @@
         
                 width: 250px;
                 background: #1A293A;
-                padding: 70
-                px 0px 0px 0px;
+                padding: 70px 0px 0px 0px;
                 overflow: auto;
                 text-align: center;
                 
@@ -140,43 +135,55 @@
                 right: 0;
                 top: 0;
                 bottom: 0;
-                padding: 120px 0px 0px 15px;
+                padding: 110px 0px 0px 15px;
                 overflow: auto;
                 background: #f5f5f5;
             }
         
             .article h2 {
                 font-weight:inherit;
+                
             }
-        
+
+            #charts{
+                padding-top: 200px;
+            }
+
             .article chartContainer {
                 padding-top: 115px;
                 /* margin-top: -120px; */
-        
-                height: 400px;
+                /* height: 300px; */
                 width: 100%;
+            }
+
+            #chartContainer1 {
+                padding-top: 115px;
+                margin-top: 0px;
             }
         
             #mapviewDiv {
+                padding-top: 115px;
+                margin-top: -115px;
                 width:95%;
-                padding-right: 20px;
-                height: 500px;
+                padding-right: 10px;
+                height: 470px;
+            }
+
+            .article chartContainer h2{
+                padding-top: 115px;
+                margin-top: -115px;
             }
         
-            #chartdiv1 {
+            .article chartContainer div{
                 width: 95%;
-                height: 300px;
+                height: 275px;
             }
-        
-            
-        
             /* .article div {
                 padding: 0;
                 height: 100%;
                 width: 100%;
                 float: right; 
             } */
-        
         </style>
     </head>
     <body>
@@ -193,39 +200,85 @@
         <section>
             <aside class="aside"> 
                     <ul class="tab">
-                        <li><a href="#section-1">Australian Food</a></li>
-                        <li><a href="#section-2">Chinese Food</a></li>
-                        <li><a href="#section-3">English Food</a></li>
-                        <li><a href="#section-4">French Food</a></li>
-                        <li><a href="#section-5">Greek Food</a></li>
-                        <li><a href="#section-6">Indian Food</a></li>
-                        <li><a href="#section-7">Itaian Food</a></li>
-                        <li><a href="#section-8">Japanese Food</a></li>
-                        <li><a href="#section-9">Thai Food</a></li>
+                        <li><a href="#mapviewDiv">Top</a></li>
+                        <li><a href="#section-1">Chinese Food</a></li>
+                        <li><a href="#section-2">Japanese Food</a></li>
+                        <li><a href="#section-3">Korean Food</a></li>
+                        <li><a href="#section-4">Indian Food</a></li>
+                        <li><a href="#section-5">Australian Food</a></li>
+                        <li><a href="#section-6">English Food</a></li>
+                        <li><a href="#section-7">French Food</a></li>
+                        <li><a href="#section-8">Greek Food</a></li>
+                        <li><a href="#section-9">Itaian Food</a></li>
+                        <li><a href="#section-10">Thai Food</a></li>
                     </ul>
                 </aside>
                 <article class="article">
                     <div id="mapviewDiv"></div>
-                    <div id="chartContainer1",class="chartContainer">
-                        <h2 style="padding-top: 115px;" id="section-1">The relation between Australian and Australian Food</h2>
-                        <div id="chartdiv1",class="chartdiv"></div>
-                    </div>
+                    <div id="charts"></div>
 
-                    <div id="chartContainer2",class="chartContainer">
-                        <h2 id="section-2", style="padding-top:115px;">Chinese Food</h2>
-                        <!-- <div id="chartdiv1",class="chartdiv"></div> -->
-                    </div>
-                    
-                    <!-- 
-                    <h2 id="section-3">排版标签</h2>
-                    <h2 id="section-4">块标签</h2> 
-                    <h2 id="section-5">字体标签</h2> -->
-                    <!-- <div id="viewDiv"></div> -->
+                    <!-- <chartContainer id="chartContainer1",class="chartContainer">
+                        <h2 id="section-1",style="margin-top:0px">CHinese Food</h2>
+                        <div id="chartdiv1"></div>
+                    </chartContainer>
+                    <chartContainer id="chartContainer2",class="chartContainer">
+                        <h2 id="section-2">Chinese Food</h2>
+                        <div id="chartdiv2"></div>
+                    </chartContainer>
+                    <chartContainer id="chartContainer3",class="chartContainer">
+                        <h2 id="section-3">English Food</h2>
+                        <div id="chartdiv3"></div>
+                    </chartContainer>
+                    <chartContainer id="chartContainer4",class="chartContainer">
+                        <h2 id="section-4">French Food</h2>
+                        <div id="chartdiv4"></div>
+                    </chartContainer>
+                    <chartContainer id="chartContainer5",class="chartContainer">
+                        <h2 id="section-5">Greek Food</h2>
+                        <div id="chartdiv5"></div>
+                    </chartContainer>
+                    <chartContainer id="chartContainer6",class="chartContainer">
+                        <h2 id="section-6">Indian Food</h2>
+                        <div id="chartdiv6"></div>
+                    </chartContainer>
+                    <chartContainer id="chartContainer7",class="chartContainer">
+                        <h2 id="section-7">Itaian Food</h2>
+                        <div id="chartdiv7"></div>
+                    </chartContainer>
+                    <chartContainer id="chartContainer8",class="chartContainer">
+                        <h2 id="section-8">Japanese Food</h2>
+                        <div id="chartdiv8"></div>
+                    </chartContainer>
+                    <chartContainer id="chartContainer9",class="chartContainer">
+                        <h2 id="section-9">Thai Food</h2>
+                        <div id="chartdiv9"></div>
+                    </chartContainer>
+                    <chartContainer id="chartContainer10",class="chartContainer">
+                        <h2 id="section-10">Thai Food</h2>
+                        <div id="chartdiv10"></div>
+                    </chartContainer> -->
                 </article>
             </section>
     <!--<footer>尾部</footer>-->
         </body>
 </html>
+
+<script>
+    var count = 10;
+    var html = ''
+    for(var i = 1; i<=10; i++){
+        var nameOfContainer = "chartContainer" + String(i);
+        var nameOfId = "section-" + String(i);
+        var nameOfChart = "chartdiv" + String(i);
+
+        // needed to be passed in parameter.
+        var nameOfDish = "Chinese"
+        console.log(nameOfContainer);
+        console.log(nameOfChart);
+        html += '<chartContainer id="' + nameOfContainer + '",class="chartContainer"><h2 id="' + nameOfId + '">' + nameOfDish +'</h2><div id="' +nameOfChart+ '"></div></chartContainer>'
+    }
+    document.getElementById('charts').innerHTML = html;
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://js.arcgis.com/4.15/"></script>
@@ -259,122 +312,73 @@
     am4core.useTheme(am4themes_dataviz);
     am4core.useTheme(am4themes_animated);
     // Themes end
+
+
+    let jsonStr1 = {'country': 'china', 'stats': {'abbotsford': {'food_percent': 0.03333333333333333, 'australia': 0.4774603174603175, 'china': 0.013227513227513227, 'england': 0.032063492063492065, 'france': 0.0032804232804232803, 'greece': 0.009947089947089947, 'india': 0.014814814814814815, 'italy': 0.004656084656084656, 'japan': 0.003492063492063492, 'thailand': 0.0068783068783068784}, 'coburg': {'food_percent': 0.25, 'australia': 0.5747521246458923, 'china': 0.006940509915014164, 'england': 0.020007082152974504, 'france': 0.0016288951841359773, 'greece': 0.025743626062322948, 'india': 0.013845609065155808, 'italy': 0.05318696883852691, 'japan': 0.0020892351274787537, 'thailand': 0.0031161473087818695}, 'docklands': {'food_percent': 0.2, 'australia': 0.2173308957952468, 'china': 0.06106032906764168, 'england': 0.018208409506398536, 'france': 0.003510054844606947, 'greece': 0.0013893967093235832, 'india': 0.1009872029250457, 'italy': 0.007605118829981719, 'japan': 0.005776965265082267, 'thailand': 0.005923217550274223}, 'fitzroy': {'food_percent': 0.1, 'australia': 0.4839693326363478, 'china': 0.010280536678863913, 'england': 0.0352848928384736, 'france': 0.005227391531625719, 'greece': 0.007405471336469768, 'india': 0.0024394493814253355, 'italy': 0.005488761108207005, 'japan': 0.0026136957658128594, 'thailand': 0.0024394493814253355}, 'melbourne': {'food_percent': 0.13942307692307693, 'australia': 0.11790586102451858, 'china': 0.09031416506378369, 'england': 0.009816276447569145, 'france': 0.003913245340584997, 'greece': 0.0007959143065596604, 'india': 0.05111538546572041, 'italy': 0.005261877915588866, 'japan': 0.009108797063960557, 'thailand': 0.023855320466052043}, 'moonee ponds': {'food_percent': 0.3333333333333333, 'australia': 0.6298167217149149, 'china': 0.006994365649893142, 'england': 0.01949355611683181, 'france': 0.0017485914124732854, 'greece': 0.01217537724240658, 'india': 0.02085357165986659, 'italy': 0.04144809274010751, 'japan': 0.002137167281911793, 'thailand': 0.004080046629104332}, 'north melbourne': {'food_percent': 0.125, 'australia': 0.3617875866734314, 'china': 0.04786064603416201, 'england': 0.019237273803483848, 'france': 0.003128699475731439, 'greece': 0.0008455944529003889, 'india': 0.02354980551327583, 'italy': 0.008286825638423811, 'japan': 0.006172839506172839, 'thailand': 0.006553357009978014}, 'southbank': {'food_percent': 0.19047619047619047, 'australia': 0.24702488279841328, 'china': 0.048909123692751535, 'england': 0.026595744680851064, 'france': 0.005048683736025965, 'greece': 0.0014875586007933646, 'india': 0.038721601153984854, 'italy': 0.009962134871979805, 'japan': 0.00991705733862243, 'thailand': 0.007573025604038947}, 'st kilda': {'food_percent': 0.07407407407407407, 'australia': 0.457867985201065, 'china': 0.007676083122990215, 'england': 0.046540576052003735, 'france': 0.007883544829016978, 'greece': 0.004667888385602157, 'india': 0.023304864977006328, 'italy': 0.008851699457141869, 'japan': 0.00325023339441928, 'thailand': 0.0024895404723211507}}}
+    let jsonStr2 = {'country': 'japan', 'stats': {'abbotsford': {'food_percent': 0.03333333333333333, 'australia': 0.4774603174603175, 'china': 0.013227513227513227, 'england': 0.032063492063492065, 'france': 0.0032804232804232803, 'greece': 0.009947089947089947, 'india': 0.014814814814814815, 'italy': 0.004656084656084656, 'japan': 0.003492063492063492, 'thailand': 0.0068783068783068784}, 'albert park': {'food_percent': 0.5, 'australia': 0.5444876008365701, 'china': 0.01511801613385121, 'england': 0.04326262324469674, 'france': 0.005318195398864655, 'greece': 0.022109351658201375, 'india': 0.01989841649238124, 'italy': 0.009202270690170301, 'japan': 0.003764565282342396, 'thailand': 0.0024499551837466388}, 'brunswick': {'food_percent': 0.4166666666666667, 'australia': 0.5520150285329458, 'china': 0.009676390316520752, 'england': 0.028462056498777158, 'france': 0.0034026867047105944, 'greece': 0.024279587424237054, 'india': 0.009534611703824478, 'italy': 0.030057065891610252, 'japan': 0.0021621238436181902, 'thailand': 0.0017013433523552972}, 'collingwood': {'food_percent': 0.16666666666666666, 'australia': 0.4487988599348534, 'china': 0.011095276872964169, 'england': 0.03277687296416938, 'france': 0.003562703583061889, 'greece': 0.007328990228013029, 'india': 0.004275244299674267, 'italy': 0.004377035830618893, 'japan': 0.0024429967426710096, 'thailand': 0.004885993485342019}, 'docklands': {'food_percent': 0.13333333333333333, 'australia': 0.2173308957952468, 'china': 0.06106032906764168, 'england': 0.018208409506398536, 'france': 0.003510054844606947, 'greece': 0.0013893967093235832, 'india': 0.1009872029250457, 'italy': 0.007605118829981719, 'japan': 0.005776965265082267, 'thailand': 0.005923217550274223}, 'elwood': {'food_percent': 1.0, 'australia': 0.5978628350639942, 'china': 0.0033808258874667954, 'england': 0.045158174354020766, 'france': 0.005493842067133542, 'greece': 0.005010866940352572, 'india': 0.009961361989857523, 'italy': 0.006459792320695484, 'japan': 0.0025356194156000967, 'thailand': 0.0021130161796667473}, 'fitzroy': {'food_percent': 0.2, 'australia': 0.4839693326363478, 'china': 0.010280536678863913, 'england': 0.0352848928384736, 'france': 0.005227391531625719, 'greece': 0.007405471336469768, 'india': 0.0024394493814253355, 'italy': 0.005488761108207005, 'japan': 0.0026136957658128594, 'thailand': 0.0024394493814253355}, 'fitzroy north': {'food_percent': 1.0, 'australia': 0.621779508687837, 'china': 0.004119233073696825, 'england': 0.03984421809466747, 'france': 0.0035200718993409225, 'greece': 0.009961054523666867, 'india': 0.002920910724985021, 'italy': 0.021794487717195925, 'japan': 0.0026962252846015576, 'thailand': 0.0017974835230677051}, 'melbourne': {'food_percent': 0.23076923076923078, 'australia': 0.11790586102451858, 'china': 0.09031416506378369, 'england': 0.009816276447569145, 'france': 0.003913245340584997, 'greece': 0.0007959143065596604, 'india': 0.05111538546572041, 'italy': 0.005261877915588866, 'japan': 0.009108797063960557, 'thailand': 0.023855320466052043}, 'moonee ponds': {'food_percent': 0.3333333333333333, 'australia': 0.6298167217149149, 'china': 0.006994365649893142, 'england': 0.01949355611683181, 'france': 0.0017485914124732854, 'greece': 0.01217537724240658, 'india': 0.02085357165986659, 'italy': 0.04144809274010751, 'japan': 0.002137167281911793, 'thailand': 0.004080046629104332}, 'port melbourne': {'food_percent': 0.6666666666666666, 'australia': 0.5767207737118941, 'china': 0.00412872575080595, 'england': 0.048922572252700636, 'france': 0.00509020982976076, 'greece': 0.018381313274136078, 'india': 0.005768904473728862, 'italy': 0.008992704032577343, 'japan': 0.0021491997058989878, 'thailand': 0.0018664102709122787}, 'south melbourne': {'food_percent': 0.2222222222222222, 'australia': 0.49819720959398023, 'china': 0.012306004075873962, 'england': 0.04420755604326697, 'france': 0.0038407273867377334, 'greece': 0.011208653393948895, 'india': 0.014500705439724095, 'italy': 0.005878664367455714, 'japan': 0.004389402727700266, 'thailand': 0.004546167110832419}, 'southbank': {'food_percent': 0.2857142857142857, 'australia': 0.24702488279841328, 'china': 0.048909123692751535, 'england': 0.026595744680851064, 'france': 0.005048683736025965, 'greece': 0.0014875586007933646, 'india': 0.038721601153984854, 'italy': 0.009962134871979805, 'japan': 0.00991705733862243, 'thailand': 0.007573025604038947}, 'st kilda': {'food_percent': 0.18518518518518517, 'australia': 0.457867985201065, 'china': 0.007676083122990215, 'england': 0.046540576052003735, 'france': 0.007883544829016978, 'greece': 0.004667888385602157, 'india': 0.023304864977006328, 'italy': 0.008851699457141869, 'japan': 0.00325023339441928, 'thailand': 0.0024895404723211507}}}
+    // let jsonStr3 = 
+    let jsonStr3 = jsonStr4 = jsonStr4 = jsonStr5 = jsonStr6 = jsonStr7 = jsonStr8 = jsonStr9 = jsonStr10 = jsonStr2;
     
-    var chart = am4core.create("chartdiv1", am4charts.XYChart);
+    function getDataPoint(jsonStr){
+        var data = []
+        var countryDish = jsonStr.country;
+        for(var state in jsonStr.stats){
+            // console.log(state);
+            var local = jsonStr['stats'][state].australia;
+            var percent = jsonStr['stats'][state].food_percent;
+            data.push({local_percent:local, food_percent:percent});
+    }
+    return data;
+    }
+
+
+    // console.log(jsonStr.stats.food_percent)
+    // console.log(chart.data);
     
-    // modify data here to draw the chart :)
-    // var data = [];
-    // var value = 50;
-    // for(var i = 0; i < 300; i++){
-    // var date = new Date();
-    // date.setHours(0,0,0,0);
-    // date.setDate(i);
-    // value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-    // data.push({date:date, value: value});
+    function createXYChart(data, divName){
+        var chart = am4core.create(divName, am4charts.XYChart);
+        chart.data = data;
+        // Create axes
+        var XAxis = chart.xAxes.push(new am4charts.ValueAxis());
+        // XAxis.renderer.minGridDistance = 3;
+        
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        // valueAxis.renderer.minGridDistance=1;
+        
+        // Create series
+        var series = chart.series.push(new am4charts.ColumnSeries());
+        series.dataFields.valueY = "food_percent";
+        series.dataFields.valueX = "local_percent";
+
+        var bullet = series.bullets.push(new am4charts.CircleBullet());
+        bullet.circle.radius = 5;
+        bullet.circle.fill = am4core.color('blue');
+        
+        series.tooltip.pointerOrientation = "vertical";
+        
+        chart.cursor = new am4charts.XYCursor();
+        chart.cursor.snapToSeries = series;
+        chart.cursor.xAxis = XAxis;
+        
+        // chart.scrollbarY = new am4core.Scrollbar();
+        chart.scrollbarX = new am4core.Scrollbar();
+    }
+    // var i = 1;
+    // for(var jsonmeg in jsonfile){
+        // createXYChart(data=getDataPoint(jsonfile[jsonmeg], "chartdiv"+str(i)));
+        // i += 1;
     // }
-
-    var data = [{
-        "X":0.4774603174603180,
-        "Y":0.0333333333333333
-    },{
-        "X":0.5747521246458920,
-        "Y":0.25
-    },
-    {
-        "X":0.217330895795247,
-        "Y":0.2
-    },
-    {
-        "X":0.4839693326363480,
-        "Y":0.1
-    },
-    {
-        "X":0.11790586102451900,
-        "Y":0.13942307692307700
-    },
-    {
-        "X":0.6298167217149150,
-        "Y":0.3333333333333330
-    },
-    {
-        "X":0.3617875866734310,
-        "Y":0.125
-    },
-    {
-        "X":0.24702488279841300,
-        "Y":0.19047619047619000
-    },{
-        "X":0.457867985201065,
-        "Y":0.07407407407407410
-    },
-    // {
-    //     "X":37.2,
-    //     "Y":0.036267081
-    // },
-    // {
-    //     "X":28.7,
-    //     "Y":0.298325723
-    // },
-    // {
-    //     "X":26.3,
-    //     "Y":0.165659739
-    // },
-    // {
-    //     "X":38,
-    //     "Y":0.012357149
-    // },
-    // {
-    //     "X":40.1,
-    //     "Y":0.04496352
-    // },
-    // {
-    //     "X":36.9,
-    //     "Y":0.089825992
-    // },
-    // {
-    //     "X":30.5,
-    //     "Y":0.124278759
-    // }
-    ]
-    
-    chart.data = data;
-    
-    // Create axes
-    var XAxis = chart.xAxes.push(new am4charts.ValueAxis());
-    // XAxis.renderer.minGridDistance = 3;
-    
-    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-    // valueAxis.renderer.minGridDistance=1;
-    
-    // Create series
-    var series = chart.series.push(new am4charts.ColumnSeries());
-    series.dataFields.valueY = "Y";
-    series.dataFields.valueX = "X";
-
-    var bullet = series.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.radius = 5;
-    bullet.circle.fill = am4core.color('blue');
-
-    // var trend = chart.series.push(new am4charts.LineSeries());
-    // trend.dataFields.valueY = "Y";
-    // trend.dataFields.valueX = "X";
-
-    // trend.strokeWidth = 2
-    // trend.stroke = am4core.color("#c00");
-
-    // trend.data = data;
-
-
-    
-    series.tooltip.pointerOrientation = "vertical";
-    
-    chart.cursor = new am4charts.XYCursor();
-    chart.cursor.snapToSeries = series;
-    chart.cursor.xAxis = XAxis;
-    
-    
-    //chart.scrollbarY = new am4core.Scrollbar();
-    chart.scrollbarX = new am4core.Scrollbar();
+    createXYChart(data=getDataPoint(jsonStr1), "chartdiv1");
+    createXYChart(data=getDataPoint(jsonStr2), "chartdiv2");
+    createXYChart(data=getDataPoint(jsonStr3), "chartdiv3");
+    createXYChart(data=getDataPoint(jsonStr4), "chartdiv4");
+    createXYChart(data=getDataPoint(jsonStr5), "chartdiv5");
+    createXYChart(data=getDataPoint(jsonStr6), "chartdiv6");
+    createXYChart(data=getDataPoint(jsonStr7), "chartdiv7");
+    createXYChart(data=getDataPoint(jsonStr8), "chartdiv8");
+    createXYChart(data=getDataPoint(jsonStr9), "chartdiv9");
+    createXYChart(data=getDataPoint(jsonStr10), "chartdiv10");
 
     }); // end am4core.ready()
+
 </script>

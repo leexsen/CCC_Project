@@ -1,3 +1,4 @@
 .idea/
 __pycache__/
 CCC_Web/
+*.json
