@@ -42,6 +42,6 @@ def get_historical_twitters(start_time, end_time):
 if __name__ == '__main__':
     # Note: It can harvest tweets from only the past few days.
     start_time = '2020-05-10'
-    end_time = '2020-05-15'
+    end_time = '2020-05-30'
     get_historical_twitters(start_time, end_time)
 
