@@ -1,5 +1,6 @@
 #Import the necessary methods from tweepy library
 import json
+import sys
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
@@ -16,7 +17,7 @@ db_name = 'imported_twitter_melbourne'
 
 masternode_hostname = 'worker1'
 
-#This is a basic listener that just prints received tweets to stdout.
+# This is a basic listener that just prints received tweets to stdout.
 class StdOutListener(StreamListener):
     def __init__(self):
         super().__init__()
@@ -27,11 +28,14 @@ class StdOutListener(StreamListener):
         self.db.save_data_tweet(tweet_json)
         return True
 
-    def on_error(self, status):
-        print(status)
+    def on_error(self, status_code):
+        print >>sys.stderr, 'Encountered error with status code:', status_code
+        return True  # Don't kill the stream
+
 
     def on_timeout(self):
-        return True
+        print >> sys.stderr, 'Timeout...'
+        return True  # Don't kill the stream
 
 def harvest_stream_tweets():
     # This handles Twitter authetification and the connection to Twitter Streaming API
@@ -42,7 +46,9 @@ def harvest_stream_tweets():
     
     while True:
         try:
-            stream.filter(locations=[144.8889, -37.8917, 145.0453, -37.7325], languages=['en'])
+            # Streams do not terminate unless the connection is closed, blocking the thread.
+            # Tweepy offers a convenient is_async parameter on filter so the stream will run on a new thread.
+            stream.filter(locations=[144.8889, -37.8917, 145.0453, -37.7325], languages=['en'], is_async=True)
         except Exception as e:
             print(e)
 
