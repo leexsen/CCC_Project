@@ -34,39 +34,10 @@
         background-color:#ccc;
           color: white;
       }
-      
-      #figure1 {
-        margin: 5px 0px;
-        width: 150px;
-        height: 150px;
-        border: 1px dashed #46df46;
-        background-color: rgb(185, 115, 115);
-        text-align: center;
-      }
-      #figure2 {
-        margin: 10px 0px;
-        width: 150px;
-        height: 150px;
-        border: 1px dashed #009900;
-        background-color: #8fe08f;
-        text-align: center;
-      }
-      #figure3 {
-        margin: 10px 00px;
-        width: 150px;
-        height: 150px;
-        border: 1px dashed #009900;
-        background-color: #34b5be;
-        text-align: center;
-      }
+
     </style>
   </head>
   <body>
-    <ul>
-      <li><a href="#">First</a></li>
-      <li><a href="#">Second</a></li>
-      <li><a href="#">Third</a></li>
-    </ul>
     <div id="viewDiv"></div>
   </body>
 </html>
@@ -86,9 +57,23 @@
       center: [144.96, -37.81] // Sets center point of view using longitude,latitude
     });
 
+    
+
+    
+
     var suburbLayer = new FeatureLayer({
       url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb/FeatureServer/0",
-  });
+    });
   map.add(suburbLayer,0);
+  // view.ui.add("info", "top-right");
+  view.on("click", function(event){
+        view.hitTest(event)
+          .then(function(response){
+            // do something with the result graphic
+            var graphic = response.results[0].graphic;
+            var attributes = graphic.attributes;
+            console.log(attributes);
+          });
+      });
   })
 </script>
