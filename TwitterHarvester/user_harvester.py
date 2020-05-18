@@ -64,16 +64,14 @@ if __name__ == '__main__':
     for user_id in user_ids:
         harvester.get_tweets_by_user(user_id)
 
-    # 2 The below is for saving follower ids
+    for user_id in user_ids:
+        harvester.get_followers_and_save_ids(user_id)
+    follower_ids = []
+    with open('follower_ids.txt') as f:
+        for line in f:
+            follower_id = line[:-1]
+            follower_ids.append(follower_id)
 
-    # for user_id in user_ids:
-    #     harvester.get_followers_and_save_ids(user_id)
-    #follower_ids = []
-    #with open('follower_ids.txt') as f:
-        #for line in f:
-            #follower_id = line[:-1]
-            #follower_ids.append(follower_id)
-
-    #for follower_id in follower_ids:
-       # harvester.get_tweets_by_user(follower_id)
+    for follower_id in follower_ids:
+       harvester.get_tweets_by_user(follower_id)
 
