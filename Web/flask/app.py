@@ -8,11 +8,11 @@ couch = couchdb.Server('http://admin:admin123@172.26.132.238:4000//')  # connect
 def food_page():
     return render_template('Food_UI.html')
 
-@app.route('/2')
+@app.route('/exercise_page')
 def exercise_page():
     return render_template('Exercise_UI.html')
 
-@app.route('/3')
+@app.route('/sleep_page')
 def sleep_page():
     return render_template('Sleep_UI.html')
 
