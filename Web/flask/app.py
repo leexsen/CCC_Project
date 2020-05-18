@@ -5,19 +5,30 @@ app = Flask(__name__)
 couch = couchdb.Server('http://admin:admin123@172.26.132.238:4000//')  # connect to couchdb
 
 @app.route('/')
-def homepage():
+def food_page():
     return render_template('Food_UI.html')
+
+@app.route('/2')
+def exercise_page():
+    return render_template('Exercise_UI.html')
+
+@app.route('/3')
+def sleep_page():
+    return render_template('Sleep_UI.html')
 
 # return the data about final_food database
 @app.route('/food')
+
 def get_food_db():
     db_food = couch['final_food']  # access to database 'final_food'
     dict = {}
     for id in db_food:
         doc = db_food[id]
-        food_country = doc['country']
-        if food_country is not 'england' or food_country is not 'france':
+        food_country = doc['country'].lower()
+        # print(food_country)
+        if food_country != 'england' and food_country != 'france':
             dict[food_country] = doc['stats']
+    # print(dict['england'])
     return dict
 
 # return the data about final_sport database

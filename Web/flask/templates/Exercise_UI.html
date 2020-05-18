@@ -8,12 +8,12 @@
                 height: 100%;
                 margin: 0;
             }
-        
+
             * {
                 margin: 0;
                 padding: 0;
             }
-        
+
             .header {
                 position:absolute;
                 height: 90px;
@@ -27,19 +27,7 @@
                 background: rgb(238, 238, 238);
                 /* overflow: hidden; */
             }
-        
-            /*footer {
-                    position: absolute;
-                    height: 60px;
-                    line-height: 60px;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    z-index: 1;
-                    text-align: center;
-                    background: #fff;
-                }*/
-        
+
             .title,
             .nav,
             .username-show {
@@ -70,7 +58,6 @@
             }
         
             .nav ul li:hover {
-                
                 background-color : #cfcfcf;
                 cursor:pointer;
                 border-radius: 5px;
@@ -78,11 +65,10 @@
                 font-weight: bold;
             }
 
-            /* .currentPage {
-                background-color: rgb(160, 160, 160);
-                color: blueviolet;
+            .nav ul li a {
+                text-decoration: none;
             }
-         */
+
             .section-right {
                 float: right;
             }
@@ -93,11 +79,9 @@
                 bottom: 0;
                 left: 0;
                 color: #FFF;
-        
                 width: 250px;
                 background: #1A293A;
-                padding: 70
-                px 0px 0px 0px;
+                padding: 70px 0px 0px 0px;
                 overflow: auto;
                 text-align: center;
                 
@@ -137,43 +121,44 @@
                 right: 0;
                 top: 0;
                 bottom: 0;
-                padding: 120px 0px 0px 15px;
+                padding: 110px 0px 0px 15px;
                 overflow: auto;
                 background: #f5f5f5;
             }
         
             .article h2 {
                 font-weight:inherit;
+                
             }
-        
+
+            #charts{
+                padding-top: 20px;
+            }
+
             .article chartContainer {
-                padding-top: 115px;
+                padding-top: 100px;
                 /* margin-top: -120px; */
-        
-                height: 400px;
+                /* height: 300px; */
                 width: 100%;
             }
-        
+
             #mapviewDiv {
+                padding-top: 115px;
+                margin-top: -115px;
                 width:95%;
-                padding-right: 20px;
-                height: 500px;
+                padding-right: 10px;
+                height: 470px;
+            }
+
+            .article chartContainer h2{
+                padding-top: 110px;
+                margin-top: -110px;
             }
         
-            #chartdiv1 {
+            .article chartContainer div{
                 width: 95%;
-                height: 300px;
+                height: 275px;
             }
-        
-            
-        
-            /* .article div {
-                padding: 0;
-                height: 100%;
-                width: 100%;
-                float: right; 
-            } */
-        
         </style>
     </head>
     <body>
@@ -181,50 +166,45 @@
             <hgroup class="title">Cluster and Cloud Computing</hgroup>
                 <nav class="nav">
                     <ul>
-                        <li class="currentPage"><a href="Food_UI.html", target="_self">First</a></li>
-                        <li class="notThisPage"><a href="Exercise_UI.html", target="_blank">Second</a></li>
-                        <li class="notThisPage"><a href="Age_tweet.html", target="_blank">Third</a></li>
+                        <li><a href="Food_UI.html", target="_self">First</a></li>
+                        <li><a href="Exercise_UI.html", target="_blank">Second</a></li>
+                        <li><a href="Age_tweet.html", target="_blank">Third</a></li>
                     </ul>
                 </nav>
         </header>
         <section>
             <aside class="aside"> 
                     <ul class="tab">
-                        <li><a href="#section-1">Australian Food</a></li>
-                        <li><a href="#section-2">Chinese Food</a></li>
-                        <li><a href="#section-3">English Food</a></li>
-                        <li><a href="#section-4">French Food</a></li>
-                        <li><a href="#section-5">Greek Food</a></li>
-                        <li><a href="#section-6">Indian Food</a></li>
-                        <li><a href="#section-7">Itaian Food</a></li>
-                        <li><a href="#section-8">Japanese Food</a></li>
-                        <li><a href="#section-9">Thai Food</a></li>
+                        <li><a href="#mapviewDiv">Top</a></li>
+                        <li><a href="#basketball">Basketball</a></li>
+                        <li><a href="#cycling">Cycling</a></li>
+                        <li><a href="#dancing">Dancing</a></li>
+                        <li><a href="#golf">Golf</a></li>
+                        <li><a href="#horsing">Horsing</a></li>
+                        <li><a href="#karate">Karate</a></li>
+                        <li><a href="#rugby">Rugby</a></li>
+                        <li><a href="#soccer">Soccer</a></li>
+                        <li><a href="#swimming">Swimming</a></li>
+                        <li><a href="#tennis">Tennis</a></li>
                     </ul>
                 </aside>
                 <article class="article">
                     <div id="mapviewDiv"></div>
-                    <div id="chartContainer1",class="chartContainer">
-                        <h2 style="padding-top: 115px;" id="section-1">The relation between Australian and Australian Food</h2>
-                        <div id="chartdiv1",class="chartdiv"></div>
-                    </div>
-
-                    <div id="chartContainer2",class="chartContainer">
-                        <h2 id="section-2", style="padding-top:115px;">Chinese Food</h2>
-                        <!-- <div id="chartdiv1",class="chartdiv"></div> -->
-                    </div>
-                    
-                    <!-- 
-                    <h2 id="section-3">排版标签</h2>
-                    <h2 id="section-4">块标签</h2> 
-                    <h2 id="section-5">字体标签</h2> -->
-                    <!-- <div id="viewDiv"></div> -->
+                    <div id="charts"></div>
                 </article>
             </section>
     <!--<footer>尾部</footer>-->
         </body>
 </html>
 
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/dataviz.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
 <script src="https://js.arcgis.com/4.15/"></script>
 <script>
     require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], function(Map, MapView, FeatureLayer) {
@@ -244,148 +224,90 @@
     map.add(suburbLayer,0);
     })
 </script>
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/dataviz.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
 <script>
-    am4core.ready(function() {
-    
-    // Themes begin
-    am4core.useTheme(am4themes_dataviz);
-    am4core.useTheme(am4themes_animated);
-    // Themes end
-    
-    var chart = am4core.create("chartdiv1", am4charts.XYChart);
-    
-    // modify data here to draw the chart :)
-    // var data = [];
-    // var value = 50;
-    // for(var i = 0; i < 300; i++){
-    // var date = new Date();
-    // date.setHours(0,0,0,0);
-    // date.setDate(i);
-    // value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-    // data.push({date:date, value: value});
-    // }
-
-    var data = [{
-        "X":39.7,
-        "Y":0.025276367
-    },{
-        "X":35.1,
-        "Y":0.016092532
-    },
-    {
-        "X":32.9,
-        "Y":0.043915925
-    },
-    {
-        "X":33.9,
-        "Y":0.018495935
-    },
-    {
-        "X":24.7,
-        "Y":0.05028907
-    },
-    {
-        "X":35.7,
-        "Y":0.009206799
-    },
-    {
-        "X":30.7,
-        "Y":0.165338208
-    },
-    {
-        "X":31.9,
-        "Y":0.069632495
-    },{
-        "X":26.3,
-        "Y":0.339059495
-    },
-    {
-        "X":37.2,
-        "Y":0.036267081
-    },
-    {
-        "X":28.7,
-        "Y":0.298325723
-    },
-    {
-        "X":26.3,
-        "Y":0.165659739
-    },
-    {
-        "X":38,
-        "Y":0.012357149
-    },
-    {
-        "X":40.1,
-        "Y":0.04496352
-    },
-    {
-        "X":36.9,
-        "Y":0.089825992
-    },
-    {
-        "X":30.5,
-        "Y":0.124278759
-    }
-    ]
-    
-    chart.data = data;
-    
-    // Create axes
-    var XAxis = chart.xAxes.push(new am4charts.ValueAxis());
-    XAxis.renderer.minGridDistance = 3;
-    
-    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-    // valueAxis.renderer.minGridDistance=1;
-    
-    // Create series
-    var series = chart.series.push(new am4charts.ColumnSeries());
-    series.dataFields.valueY = "Y";
-    series.dataFields.valueX = "X";
-
-    var bullet = series.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.radius = 5;
-    bullet.circle.fill = am4core.color('blue');
-
-    // var trend = chart.series.push(new am4charts.LineSeries());
-    // trend.dataFields.valueY = "Y";
-    // trend.dataFields.valueX = "X";
-
-    // trend.strokeWidth = 2
-    // trend.stroke = am4core.color("#c00");
-
-    // trend.data = data;
-
-
-    
-    series.tooltip.pointerOrientation = "vertical";
-    
-    chart.cursor = new am4charts.XYCursor();
-    chart.cursor.snapToSeries = series;
-    chart.cursor.xAxis = XAxis;
-    
-    
-    //chart.scrollbarY = new am4core.Scrollbar();
-    chart.scrollbarX = new am4core.Scrollbar();
-
-    }); // end am4core.ready()
-</script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    exercise_jason = "";
+    let exercise_json = {};
     $.ajax({
-        url: 'http://127.0.0.1:5000/food',
+        url: 'http://127.0.0.1:5000/sport',
         type: 'GET',
+        async: false,
         success: function (result) {
-            console.log(result);
-            exercise_jason = result;
+            console.log("result",result);
+            exercise_json = result;}
+    })
+    // console.log(exercise_json);
+
+    
+    var html = '';
+    var i = 1;
+    for(var exercise in exercise_json){
+        var nameOfContainer = "chartContainer" + String(i);
+        // console.log("nameOfContainer", nameOfContainer);
+        var nameOfId = exercise;
+        // console.log("nameOfId", nameOfId);
+        var title = "The relation between income and " + nameOfId;
+        var nameOfChart = "chartdiv" + String(i);
+        // console.log("nameOfChart", nameOfChart);
+        i += 1;
+
+        html += '<chartContainer id="' + nameOfContainer + '",class="chartContainer"><h2 id="' 
+            + nameOfId + '">' + title +'</h2><div id="' +nameOfChart+ '"></div></chartContainer>';
+        
+    }
+    document.getElementById('charts').innerHTML = html ;
+
+    am4core.ready(function(){
+        // Themes begin
+        am4core.useTheme(am4themes_dataviz);
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        function getDataPoint(jsonStr){
+            console.log("DataJSON", jsonStr);
+            var data = [];
+            for(var state in jsonStr){
+                var income = jsonStr[state].income;
+                var percent = jsonStr[state].sport_percent;
+                data.push({income:income, exercise_percent:percent});
+            }
+            return data;
+        }
+
+        function createXYChart(data, divName){
+            var chart = am4core.create(divName, am4charts.XYChart);
+            chart.data = data;
+            // Create axes
+            var XAxis = chart.xAxes.push(new am4charts.ValueAxis());
+            // XAxis.renderer.minGridDistance = 3;
+
+            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            // valueAxis.renderer.minGridDistance=1;
+
+            // Create series
+            var series = chart.series.push(new am4charts.ColumnSeries());
+            series.dataFields.valueY = "exercise_percent";
+            series.dataFields.valueX = "income";
+
+            var bullet = series.bullets.push(new am4charts.CircleBullet());
+            bullet.circle.radius = 5;
+            bullet.circle.fill = am4core.color('blue');
+
+            series.tooltip.pointerOrientation = "vertical";
+
+            chart.cursor = new am4charts.XYCursor();
+            chart.cursor.snapToSeries = series;
+            chart.cursor.xAxis = XAxis;
+
+            // chart.scrollbarY = new am4core.Scrollbar();
+            chart.scrollbarX = new am4core.Scrollbar();
+        }
+        var j = 1;
+        for(var exercise in exercise_json){
+            var nameOfChart = "chartdiv" + String(j);
+            console.log("chartDiv", nameOfChart);
+            dataJSON = exercise_json[exercise];
+            createXYChart(data=getDataPoint(dataJSON), nameOfChart);
+            j += 1;
         }
     });
 </script>
