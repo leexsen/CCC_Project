@@ -1,202 +1,207 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Result</title>
-        <style type="text/css">
-            body {
-                height: 100%;
-                margin: 0;
-            }
 
-            * {
-                margin: 0;
-                padding: 0;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style type="text/css">
+        body {
+            height: 100%;
+            margin: 0;
+        }
 
-            .header {
-                position:absolute;
-                height: 90px;
-                line-height: 90px;
-                left: 0;
-                right: 0;
-                z-index: 1;
-                -webkit-box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
-                box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
-                padding: 0px 0px 0px 30px;
-                background: rgb(238, 238, 238);
-                /* overflow: hidden; */
-            }
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-            .title,
-            .nav,
-            .username-show {
-                float: left;
-            }
-        
-            .title {
-                font-weight: bold;
-                color:rgb(34, 87, 185);
-            }
-        
-            .nav {
-                margin-left: 60px;
-            }
-            
-            .nav ul {
-                list-style: none;
-                padding-left:0;
-                /* border: 1px solid gray; */
-                display : inline-block;
-                padding:0px;
-                border-radius: 5px;
-            }
-        
-            .nav ul li {
-                display: inline;
-                padding:30px;
-            }
-        
-            .nav ul li:hover {
-                background-color : #cfcfcf;
-                cursor:pointer;
-                border-radius: 5px;
-                color: rgb(140, 133, 235);
-                font-weight: bold;
-            }
+        .header {
+            position: absolute;
+            height: 90px;
+            line-height: 90px;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            -webkit-box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
+            box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
+            padding: 0px 0px 0px 30px;
+            background: rgb(238, 238, 238);
+            /* overflow: hidden; */
+        }
 
-            .nav ul li a {
-                text-decoration: none;
-            }
+        .title,
+        .nav,
+        .username-show {
+            float: left;
+        }
 
-            .section-right {
-                float: right;
-            }
-        
-            .aside {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                color: #FFF;
-                width: 250px;
-                background: #1A293A;
-                padding: 70px 0px 0px 0px;
-                overflow: auto;
-                text-align: center;
-                
-                
-            }
-        
-            .aside ul {
-                list-style: none;
-                padding-left:0;
-                padding-top: 0px;
-                /* border: 1px solid gray; */
-                display : line;
-                /* padding:0px; */
-                border-radius: 5px;
-            }
-        
-            .aside ul li {
-                padding:30px;
-            }
-        
-            .aside ul li:hover{
-                background-color : #403750;
-                cursor:pointer;
-                border-radius: 5px;
-                /* color: rgb(83, 158, 146); */
-                font-weight: inherit;
-            }
-        
-            .aside ul li a {
-                text-decoration: none;
-                color: #C0C2C5;
-            }
-        
-            .article {
-                position: absolute;
-                left: 250px;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                padding: 110px 0px 0px 15px;
-                overflow: auto;
-                background: #f5f5f5;
-            }
-        
-            .article h2 {
-                font-weight:inherit;
-                
-            }
+        .title {
+            font-weight: bold;
+            color: rgb(34, 87, 185);
+        }
 
-            #charts{
-                padding-top: 20px;
-            }
+        .nav {
+            margin-left: 60px;
+        }
 
-            .article chartContainer {
-                padding-top: 100px;
-                /* margin-top: -120px; */
-                /* height: 300px; */
-                width: 100%;
-            }
+        .nav ul {
+            list-style: none;
+            padding-left: 0;
+            /* border: 1px solid gray; */
+            display: inline-block;
+            padding: 0px;
+            border-radius: 5px;
+        }
 
-            #mapviewDiv {
-                padding-top: 115px;
-                margin-top: -115px;
-                width:95%;
-                padding-right: 10px;
-                height: 470px;
-            }
+        .nav ul li {
+            display: inline;
+            padding: 30px;
+        }
 
-            .article chartContainer h2{
-                padding-top: 110px;
-                margin-top: -110px;
-            }
-        
-            .article chartContainer div{
-                width: 95%;
-                height: 100%;
-            }
+        .nav ul li:hover {
+            background-color: #cfcfcf;
+            cursor: pointer;
+            border-radius: 5px;
+            color: rgb(140, 133, 235);
+            font-weight: bold;
+        }
 
-            #chartdiv1 {
-                width: 95%;
-                height: 300px;
-            }
+        .nav ul li a {
+            text-decoration: none;
+        }
 
-        </style>
-    </head>
-    <body>
-        <header class="header text-size24">
-            <hgroup class="title">Cluster and Cloud Computing</hgroup>
-                <nav class="nav">
-                    <ul>
-                        <li><a href="http://127.0.0.1:5000/", target="_blank">First</a></li>
-                        <li><a href="http://127.0.0.1:5000/exercise_page", target="_blank">Second</a></li>
-                        <li>Third</a></li>
-                    </ul>
-                </nav>
-        </header>
+        .section-right {
+            float: right;
+        }
+
+        .aside {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            color: #FFF;
+            width: 250px;
+            background: #1A293A;
+            padding: 70px 0px 0px 0px;
+            overflow: auto;
+            text-align: center;
+
+
+        }
+
+        .aside ul {
+            list-style: none;
+            padding-left: 0;
+            padding-top: 0px;
+            /* border: 1px solid gray; */
+            display: line;
+            /* padding:0px; */
+            border-radius: 5px;
+        }
+
+        .aside ul li {
+            padding: 30px;
+        }
+
+        .aside ul li:hover {
+            background-color: #403750;
+            cursor: pointer;
+            border-radius: 5px;
+            /* color: rgb(83, 158, 146); */
+            font-weight: inherit;
+        }
+
+        .aside ul li a {
+            text-decoration: none;
+            color: #C0C2C5;
+        }
+
+        .article {
+            position: absolute;
+            left: 250px;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            padding: 110px 0px 0px 15px;
+            overflow: auto;
+            background: #f5f5f5;
+        }
+
+        .article h2 {
+            font-weight: inherit;
+
+        }
+
+        #charts {
+            padding-top: 20px;
+        }
+
+        .article chartContainer {
+            padding-top: 100px;
+            /* margin-top: -120px; */
+            /* height: 300px; */
+            width: 100%;
+        }
+
+        #mapviewDiv {
+            padding-top: 115px;
+            margin-top: -115px;
+            width: 95%;
+            padding-right: 10px;
+            height: 470px;
+        }
+
+        .article chartContainer h2 {
+            padding-top: 110px;
+            margin-top: -110px;
+        }
+
+        .article chartContainer div {
+            width: 95%;
+            height: 100%;
+        }
+
+        #chartdiv1 {
+            width: 95%;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header text-size24">
+        <hgroup class="title">Cluster and Cloud Computing</hgroup>
+        <nav class="nav">
+            <ul>
+                <li><a href="http://127.0.0.1:5000/" , target="_blank">First</a></li>
+                <li><a href="http://127.0.0.1:5000/exercise_page" , target="_blank">Second</a></li>
+                <li>Third</a></li>
+            </ul>
+        </nav>
+            
+    </header>
         <section>
-            <aside class="aside"> 
-                    <ul class="tab">
-                        <li><a href="#mapviewDiv">Top</a></li>
-                        <li><a href="#result">Result</a></li>
-                    </ul>
-                </aside>
-                <article class="article">
-                    <div id="mapviewDiv"></div>
-                    <div id="charts">
-                        <div id="chartContainer1", class="chartContainer">
-                            <h2 id="result">The relation between age and tweet time</h2>
-                            <div id="chartdiv1"></div>
-                        </div>
-                    </div>
-                </article>
-            </section>
+                <aside class="aside"> 
+            <ul class="tab">
+                <li><a href="#mapviewDiv">Top</a></li>
+                <li><a href="#result">Result</a></li>
+            </ul>
+                        </aside>
+                    <article class="article">
+            <div id="mapviewDiv"></div>
+            <div id="charts">
+                <div id="chartContainer1" , class="chartContainer">
+                    <h2 id="result">The relation between age and tweet time</h2>
+                    <div id="chartdiv1"></div>
+                </div>
+            </div>
+                        
+        </article>
+                </section>
     <!--<footer>尾部</footer>-->
-        </body>
+        
+</body>
+
 </html>
 
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
@@ -209,21 +214,21 @@
 <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
 <script src="https://js.arcgis.com/4.15/"></script>
 <script>
-    require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], function(Map, MapView, FeatureLayer) {
-    var map = new Map({
-        basemap: "gray"
-    });
-    var view = new MapView({
-        container: "mapviewDiv", // Reference to the scene div created in step 5
-        map: map, // Reference to the map object created before the scene
-        zoom: 10, // Sets zoom level based on level of detail (LOD)
-        center: [144.96, -37.81] // Sets center point of view using longitude,latitude
-    });
+    require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], function (Map, MapView, FeatureLayer) {
+        var map = new Map({
+            basemap: "gray"
+        });
+        var view = new MapView({
+            container: "mapviewDiv", // Reference to the scene div created in step 5
+            map: map, // Reference to the map object created before the scene
+            zoom: 10, // Sets zoom level based on level of detail (LOD)
+            center: [144.96, -37.81] // Sets center point of view using longitude,latitude
+        });
 
-    var suburbLayer = new FeatureLayer({
-        url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb/FeatureServer/0",
-    });
-    map.add(suburbLayer,0);
+        var suburbLayer = new FeatureLayer({
+            url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb/FeatureServer/0",
+        });
+        map.add(suburbLayer, 0);
     })
 </script>
 
@@ -241,24 +246,27 @@
     });
     console.log(sleep_json);
 
-    am4core.ready(function(){
+    am4core.ready(function () {
         // Themes begin
         am4core.useTheme(am4themes_dataviz);
         am4core.useTheme(am4themes_animated);
         // Themes end
 
-        function getDataPoint(jsonStr){
+        function getDataPoint(jsonStr) {
             console.log("DataJSON", jsonStr);
             var data = [];
-            for(var state in jsonStr){
+            for (var state in jsonStr) {
                 var age = jsonStr[state].median_age;
                 var avg_tweet = jsonStr[state].average_person_tweet;
-                data.push({median_age:age, average_person_tweet:avg_tweet});
+                data.push({
+                    median_age: age,
+                    average_person_tweet: avg_tweet
+                });
             }
             return data;
         }
 
-        function createXYChart(data, divName){
+        function createXYChart(data, divName) {
             var chart = am4core.create(divName, am4charts.XYChart);
             chart.data = data;
             // Create axes
@@ -286,7 +294,7 @@
             // chart.scrollbarY = new am4core.Scrollbar();
             chart.scrollbarX = new am4core.Scrollbar();
         }
-        
-        createXYChart(data=getDataPoint(sleep_json), "chartdiv1");
+
+        createXYChart(data = getDataPoint(sleep_json), "chartdiv1");
     });
 </script>

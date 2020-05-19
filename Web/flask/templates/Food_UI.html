@@ -1,200 +1,206 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Result</title>
-        <style type="text/css">
-            body {
-                height: 100%;
-                margin: 0;
-            }
 
-            * {
-                margin: 0;
-                padding: 0;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style type="text/css">
+        body {
+            height: 100%;
+            margin: 0;
+        }
 
-            .header {
-                position:absolute;
-                height: 90px;
-                line-height: 90px;
-                left: 0;
-                right: 0;
-                z-index: 1;
-                -webkit-box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
-                box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
-                padding: 0px 0px 0px 30px;
-                background: rgb(238, 238, 238);
-                /* overflow: hidden; */
-            }
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-            .title,
-            .nav,
-            .username-show {
-                float: left;
-            }
-        
-            .title {
-                font-weight: bold;
-                color:rgb(34, 87, 185);
-            }
-        
-            .nav {
-                margin-left: 60px;
-            }
-            
-            .nav ul {
-                list-style: none;
-                padding-left:0;
-                /* border: 1px solid gray; */
-                display : inline-block;
-                padding:0px;
-                border-radius: 5px;
-            }
-        
-            .nav ul li {
-                display: inline;
-                padding:30px;
-            }
-        
-            .nav ul li:hover {
-                background-color : #cfcfcf;
-                cursor:pointer;
-                border-radius: 5px;
-                color: rgb(140, 133, 235);
-                font-weight: bold;
-            }
+        .header {
+            position: absolute;
+            height: 90px;
+            line-height: 90px;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            -webkit-box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
+            box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
+            padding: 0px 0px 0px 30px;
+            background: rgb(238, 238, 238);
+            /* overflow: hidden; */
+        }
 
-            .nav ul li a {
-                text-decoration: none;
-            }
+        .title,
+        .nav,
+        .username-show {
+            float: left;
+        }
 
-            .section-right {
-                float: right;
-            }
-        
-            .aside {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                color: #FFF;
-                width: 250px;
-                background: #1A293A;
-                padding: 70px 0px 0px 0px;
-                overflow: auto;
-                text-align: center;
-                
-                
-            }
-        
-            .aside ul {
-                list-style: none;
-                padding-left:0;
-                padding-top: 0px;
-                /* border: 1px solid gray; */
-                display : line;
-                /* padding:0px; */
-                border-radius: 5px;
-            }
-        
-            .aside ul li {
-                padding:30px;
-            }
-        
-            .aside ul li:hover{
-                background-color : #403750;
-                cursor:pointer;
-                border-radius: 5px;
-                /* color: rgb(83, 158, 146); */
-                font-weight: inherit;
-            }
-        
-            .aside ul li a {
-                text-decoration: none;
-                color: #C0C2C5;
-            }
-        
-            .article {
-                position: absolute;
-                left: 250px;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                padding: 110px 0px 0px 15px;
-                overflow: auto;
-                background: #f5f5f5;
-            }
-        
-            .article h2 {
-                font-weight:inherit;
-                
-            }
+        .title {
+            font-weight: bold;
+            color: rgb(34, 87, 185);
+        }
 
-            #charts{
-                padding-top: 20px;
-            }
+        .nav {
+            margin-left: 60px;
+        }
 
-            .article chartContainer {
-                padding-top: 100px;
-                /* margin-top: -120px; */
-                /* height: 300px; */
-                width: 100%;
-            }
+        .nav ul {
+            list-style: none;
+            padding-left: 0;
+            /* border: 1px solid gray; */
+            display: inline-block;
+            padding: 0px;
+            border-radius: 5px;
+        }
 
-            #mapviewDiv {
-                padding-top: 115px;
-                margin-top: -115px;
-                width:95%;
-                padding-right: 10px;
-                height: 470px;
-            }
+        .nav ul li {
+            display: inline;
+            padding: 30px;
+        }
 
-            .article chartContainer h2{
-                padding-top: 110px;
-                margin-top: -110px;
-            }
-        
-            .article chartContainer div{
-                width: 95%;
-                height: 275px;
-            }
-        </style>
-    </head>
-    <body>
-        <header class="header text-size24">
-            <hgroup class="title">Cluster and Cloud Computing</hgroup>
-                <nav class="nav">
-                    <ul>
-                        <li>First</li>
-                        <li><a href="http://127.0.0.1:5000/exercise_page", target="_blank">Second</a></li>
-                        <li><a href="http://127.0.0.1:5000/sleep_page", target="_blank">Third</a></li>
-                    </ul>
-                </nav>
-        </header>
+        .nav ul li:hover {
+            background-color: #cfcfcf;
+            cursor: pointer;
+            border-radius: 5px;
+            color: rgb(140, 133, 235);
+            font-weight: bold;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+        }
+
+        .section-right {
+            float: right;
+        }
+
+        .aside {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            color: #FFF;
+            width: 250px;
+            background: #1A293A;
+            padding: 70px 0px 0px 0px;
+            overflow: auto;
+            text-align: center;
+
+
+        }
+
+        .aside ul {
+            list-style: none;
+            padding-left: 0;
+            padding-top: 0px;
+            /* border: 1px solid gray; */
+            display: line;
+            /* padding:0px; */
+            border-radius: 5px;
+        }
+
+        .aside ul li {
+            padding: 30px;
+        }
+
+        .aside ul li:hover {
+            background-color: #403750;
+            cursor: pointer;
+            border-radius: 5px;
+            /* color: rgb(83, 158, 146); */
+            font-weight: inherit;
+        }
+
+        .aside ul li a {
+            text-decoration: none;
+            color: #C0C2C5;
+        }
+
+        .article {
+            position: absolute;
+            left: 250px;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            padding: 110px 0px 0px 15px;
+            overflow: auto;
+            background: #f5f5f5;
+        }
+
+        .article h2 {
+            font-weight: inherit;
+
+        }
+
+        #charts {
+            padding-top: 20px;
+        }
+
+        .article chartContainer {
+            padding-top: 100px;
+            /* margin-top: -120px; */
+            /* height: 300px; */
+            width: 100%;
+        }
+
+        #mapviewDiv {
+            padding-top: 115px;
+            margin-top: -115px;
+            width: 95%;
+            padding-right: 10px;
+            height: 470px;
+        }
+
+        .article chartContainer h2 {
+            padding-top: 110px;
+            margin-top: -110px;
+        }
+
+        .article chartContainer div {
+            width: 95%;
+            height: 275px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header text-size24">
+        <hgroup class="title">Cluster and Cloud Computing</hgroup>
+        <nav class="nav">
+            <ul>
+                <li>First</li>
+                <li><a href="http://127.0.0.1:5000/exercise_page" , target="_blank">Second</a></li>
+                <li><a href="http://127.0.0.1:5000/sleep_page" , target="_blank">Third</a></li>
+            </ul>
+        </nav>
+            
+    </header>
         <section>
-            <aside class="aside"> 
-                    <ul class="tab">
-                        <li><a href="#mapviewDiv">Top</a></li>
-                        <li><a href="#australia">Australian Food</a></li>
-                        <li><a href="#china">Chinese Food</a></li>
-                        <li><a href="#greece">Greek Food</a></li>
-                        <li><a href="#india">Indian Food</a></li>
-                        <li><a href="#italy">Italian Food</a></li>
-                        <li><a href="#japan">Japanese Food</a></li>
-                        <li><a href="#korea">Korean Food</a></li>
-                        <li><a href="#thai">Thai Food</a></li>
-<!--                    <li><a href="#section-9">Itaian Food</a></li>
+                <aside class="aside"> 
+            <ul class="tab">
+                <li><a href="#mapviewDiv">Top</a></li>
+                <li><a href="#australia">Australian Food</a></li>
+                <li><a href="#china">Chinese Food</a></li>
+                <li><a href="#greece">Greek Food</a></li>
+                <li><a href="#india">Indian Food</a></li>
+                <li><a href="#italy">Italian Food</a></li>
+                <li><a href="#japan">Japanese Food</a></li>
+                <li><a href="#korea">Korean Food</a></li>
+                <li><a href="#thai">Thai Food</a></li>
+                <!--                    <li><a href="#section-9">Itaian Food</a></li>
                         <li><a href="#section-10">Thai Food</a></li> -->
-                    </ul>
-                </aside>
-                <article class="article">
-                    <div id="mapviewDiv"></div>
-                    <div id="charts"></div>
-                </article>
-            </section>
+            </ul>
+                        </aside>
+                    <article class="article">
+            <div id="mapviewDiv"></div>
+            <div id="charts"></div>
+                        
+        </article>
+                </section>
     <!--<footer>尾部</footer>-->
-        </body>
+        
+</body>
+
 </html>
 
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
@@ -207,21 +213,21 @@
 <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
 <script src="https://js.arcgis.com/4.15/"></script>
 <script>
-    require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], function(Map, MapView, FeatureLayer) {
-    var map = new Map({
-        basemap: "gray"
-    });
-    var view = new MapView({
-        container: "mapviewDiv", // Reference to the scene div created in step 5
-        map: map, // Reference to the map object created before the scene
-        zoom: 10, // Sets zoom level based on level of detail (LOD)
-        center: [144.96, -37.81] // Sets center point of view using longitude,latitude
-    });
+    require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], function (Map, MapView, FeatureLayer) {
+        var map = new Map({
+            basemap: "gray"
+        });
+        var view = new MapView({
+            container: "mapviewDiv", // Reference to the scene div created in step 5
+            map: map, // Reference to the map object created before the scene
+            zoom: 10, // Sets zoom level based on level of detail (LOD)
+            center: [144.96, -37.81] // Sets center point of view using longitude,latitude
+        });
 
-    var suburbLayer = new FeatureLayer({
-        url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb/FeatureServer/0",
-    });
-    map.add(suburbLayer,0);
+        var suburbLayer = new FeatureLayer({
+            url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb/FeatureServer/0",
+        });
+        map.add(suburbLayer, 0);
     })
 </script>
 
@@ -240,10 +246,10 @@
     });
     // console.log(food_jason);
 
-    
+
     var html = '';
     var i = 1;
-    for(var dishes in food_jason){
+    for (var dishes in food_jason) {
         var nameOfContainer = "chartContainer" + String(i);
         // console.log("nameOfContainer", nameOfContainer);
         var nameOfId = dishes;
@@ -253,30 +259,33 @@
         // console.log("nameOfChart", nameOfChart);
         i += 1;
 
-        html += '<chartContainer id="' + nameOfContainer + '",class="chartContainer"><h2 id="' 
-            + nameOfId + '">' + countryDish +'</h2><div id="' +nameOfChart+ '"></div></chartContainer>';
-        
-    }
-    document.getElementById('charts').innerHTML = html ;
+        html += '<chartContainer id="' + nameOfContainer + '",class="chartContainer"><h2 id="' +
+            nameOfId + '">' + countryDish + '</h2><div id="' + nameOfChart + '"></div></chartContainer>';
 
-    am4core.ready(function(){
+    }
+    document.getElementById('charts').innerHTML = html;
+
+    am4core.ready(function () {
         // Themes begin
         am4core.useTheme(am4themes_dataviz);
         am4core.useTheme(am4themes_animated);
         // Themes end
 
-        function getDataPoint(jsonStr){
+        function getDataPoint(jsonStr) {
             console.log("DataJSON", jsonStr);
             var data = [];
-            for(var state in jsonStr){
+            for (var state in jsonStr) {
                 var local = jsonStr[state].australia;
                 var percent = jsonStr[state].food_percent;
-                data.push({local_percent:local, food_percent:percent});
+                data.push({
+                    local_percent: local,
+                    food_percent: percent
+                });
             }
             return data;
         }
 
-        function createXYChart(data, divName){
+        function createXYChart(data, divName) {
             var chart = am4core.create(divName, am4charts.XYChart);
             chart.data = data;
             // Create axes
@@ -305,11 +314,11 @@
             chart.scrollbarX = new am4core.Scrollbar();
         }
         var j = 1;
-        for(var dishes in food_jason){
+        for (var dishes in food_jason) {
             var nameOfChart = "chartdiv" + String(j);
             console.log("chartDiv", nameOfChart);
             dataJSON = food_jason[dishes];
-            createXYChart(data=getDataPoint(dataJSON), nameOfChart);
+            createXYChart(data = getDataPoint(dataJSON), nameOfChart);
             j += 1;
         }
     });
