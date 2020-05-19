@@ -44,7 +44,7 @@ def harvest_stream_tweets():
     # This handles Twitter authetification and the connection to Twitter Streaming API
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
-    stream = Stream(auth, StdOutListener())
+    stream = Stream(auth, StdOutListener(),wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
     while True:
         try:
             # [144.8889, -37.8917, 145.0453, -37.7325]
