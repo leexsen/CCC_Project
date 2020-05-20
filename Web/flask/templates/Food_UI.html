@@ -225,7 +225,7 @@
         });
 
         var suburbLayer = new FeatureLayer({
-            url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb/FeatureServer/0",
+            url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb_info/FeatureServer/0",
         });
         map.add(suburbLayer, 0);
     })
@@ -251,12 +251,9 @@
     var i = 1;
     for (var dishes in food_jason) {
         var nameOfContainer = "chartContainer" + String(i);
-        // console.log("nameOfContainer", nameOfContainer);
         var nameOfId = dishes;
-        // console.log("nameOfId", nameOfId);
         var countryDish = "The relation between australian and " + nameOfId + " food";
         var nameOfChart = "chartdiv" + String(i);
-        // console.log("nameOfChart", nameOfChart);
         i += 1;
 
         html += '<chartContainer id="' + nameOfContainer + '",class="chartContainer"><h2 id="' +

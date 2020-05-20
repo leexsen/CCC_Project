@@ -8,6 +8,7 @@ db_food = couch['final_food']  # access to database 'final_food'
 db_sport = couch['final_sport']  # access the database 'final_sport'
 location_time_summary_db = couch['location_time_summary']  # access the database location_time_summary
 
+
 def get_food_data(suburb):
     dict = {}
     for id in db_food:
@@ -43,24 +44,25 @@ def get_sleep_data():
 
     return dict
 
-with open('suburb.json') as suburbs:
+with open('suburb_info.json') as suburbs:
     suburbs_json = json.load(suburbs)
+
 
 features = suburbs_json['features']
 food_countries = ['china',  "japan", "korea", "india",  "australia",  "greece", "italy", "thai"]
 sports = ['cycling', "rugby",  "basketball",  "horsing",  "tennis", "golf", "swimming",  "dancing",  "soccer", "karate"]
 
 for feature in features:
-    properties = feature['properties']
-    suburb = properties['name'].lower()
+    properties = feature["properties"]
+    suburb = properties["name"].lower()
 
     # add food_final db data to suburbs json
     country_percents = get_food_data(suburb)
     for food_country in food_countries:
         if food_country not in country_percents:
-            properties['food_' + food_country] = 0
+            properties["food_" + food_country] = 0
         else:
-            properties['food_' + food_country] = country_percents[food_country]
+            properties["food_" + food_country] = country_percents[food_country]
 
     # add sport_final db data to suburbs json
     sport_percents = get_sport_data(suburb)
@@ -80,7 +82,9 @@ for feature in features:
 
 # map_food_db.save(suburbs_json)  # save to mydatabase
 
+
 output = open('new_suburbs.json', 'w')
 output.write(str(suburbs_json))
 
 # print(suburbs_json) # the json contains all data
+
