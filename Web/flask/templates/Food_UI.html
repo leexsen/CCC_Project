@@ -143,12 +143,45 @@
             width: 100%;
         }
 
+        #seasons-filter {
+            height: 160px;
+            width: 100%;
+            visibility: hidden;
+        }
+
+        .season-item {
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            vertical-align: baseline;
+            cursor: pointer;
+            height: 40px;
+        }
+
+        .season-item:focus {
+            background-color: dimgrey;
+        }
+
+        .season-item:hover {
+            background-color: dimgrey;
+        }
+
         #mapviewDiv {
             padding-top: 115px;
             margin-top: -115px;
             width: 95%;
             padding-right: 10px;
             height: 470px;
+        }
+
+        #titleDiv {
+            padding: 10px;
+        }
+
+        #titleText {
+            font-size: 20pt;
+            font-weight: 60;
+            padding-bottom: 10px;
         }
 
         .article chartContainer h2 {
@@ -187,16 +220,28 @@
                 <li><a href="#japan">Japanese Food</a></li>
                 <li><a href="#korea">Korean Food</a></li>
                 <li><a href="#thai">Thai Food</a></li>
-                <!--                    <li><a href="#section-9">Itaian Food</a></li>
-                        <li><a href="#section-10">Thai Food</a></li> -->
             </ul>
-                        </aside>
-                    <article class="article">
+                </aside>
+        <article class="article">
+            <div id="food-filter" class="esri-widget">
+                <div class="food-item visible-food" data-food="australia">Australian</div>
+                <div class="food-item visible-food" data-food="china">Chinese</div>
+                <div class="food-item visible-food" data-food="greece">Greek</div>
+                <div class="food-item visible-food" data-food="india">Indian</div>
+                <div class="food-item visible-food" data-food="italy">Italian</div>
+                <div class="food-item visible-food" data-food="japan">Japanese</div>
+                <div class="food-item visible-food" data-food="korea">Korean</div>
+                <div class="food-item visible-food" data-food="thai">Thai</div>
+            </div>
             <div id="mapviewDiv"></div>
-            <div id="charts"></div>
-                        
+            <div id="titleDiv" class="esri-widget">
+                <div id="titleText">Food - Local</div>
+                <div>Different Food - Local percent</div>
+                <div id="charts"></div>
+                            
         </article>
-                </section>
+                
+    </section>
     <!--<footer>尾部</footer>-->
         
 </body>
@@ -213,7 +258,9 @@
 <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
 <script src="https://js.arcgis.com/4.15/"></script>
 <script>
-    require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], function (Map, MapView, FeatureLayer) {
+    require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/widgets/Expand"], function (Map,
+        MapView, FeatureLayer, Expand) {
+        let floodLayerView;
         var map = new Map({
             basemap: "gray"
         });
@@ -228,6 +275,20 @@
             url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb_info/FeatureServer/0",
         });
         map.add(suburbLayer, 0);
+        view.ui.add("titleDiv", "top-right");
+
+        const foodNodes = document.querySelectorAll(`.food-item`);
+        const foodElement = document.getElementById("foods-filter");
+
+        foodElement.addEventListener("click", filterByFood);
+
+        function filterByFood(event) {
+          const selectedSFood = event.target.getAttribute("data-season");
+          floodLayerView.filter = {
+            where: " = '" + selectedSeason + "'"
+          };
+        }
+
     })
 </script>
 
