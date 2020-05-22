@@ -52,8 +52,8 @@ def write2json():
 
 
     features = suburbs_json['features']
-    food_countries = ['china',  "japan", "korea", "india",  "australia",  "greece", "italy", "thai"]
-    sports = ['cycling', "rugby",  "basketball",  "horsing",  "tennis", "golf", "swimming",  "dancing",  "soccer", "karate"]
+    food_countries = ["china",  "japan", "korea", "india",  "australia",  "greece", "italy", "thai"]
+    sports = ["cycling", "rugby",  "basketball",  "horsing",  "tennis", "golf", "swimming",  "dancing",  "soccer", "karate"]
 
     for feature in features:
         properties = feature["properties"]
@@ -71,9 +71,9 @@ def write2json():
         sport_percents = get_sport_data(suburb)
         for sport in sports:
             if sport not in sport_percents:
-                properties['sport_' + sport] = 0
+                properties["sport_" + sport] = 0
             else:
-                properties['sport_' + sport] = sport_percents[sport]
+                properties["sport_" + sport] = sport_percents[sport]
 
         # add location_time_summary db data to suburbs json
         average_person_tweets = get_sleep_data()

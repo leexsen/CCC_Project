@@ -176,13 +176,24 @@
 
         #titleDiv {
             padding: 10px;
+            height: 70px;
         }
 
         #titleText {
             font-size: 20pt;
-            font-weight: 60;
+            font-weight: 30;
             padding-bottom: 10px;
         }
+
+        /* #info {
+            background-color: black;
+            opacity: 0.75;
+            color: orange;
+            font-size: 18pt;
+            padding: 8px;
+            visibility: hidden;
+        } */
+
 
         .article chartContainer h2 {
             padding-top: 110px;
@@ -223,7 +234,7 @@
             </ul>
                 </aside>
         <article class="article">
-            <div id="food-filter" class="esri-widget">
+            <!-- <div id="food-filter" class="esri-widget">
                 <div class="food-item visible-food" data-food="australia">Australian</div>
                 <div class="food-item visible-food" data-food="china">Chinese</div>
                 <div class="food-item visible-food" data-food="greece">Greek</div>
@@ -232,12 +243,12 @@
                 <div class="food-item visible-food" data-food="japan">Japanese</div>
                 <div class="food-item visible-food" data-food="korea">Korean</div>
                 <div class="food-item visible-food" data-food="thai">Thai</div>
-            </div>
+            </div> -->
             <div id="mapviewDiv"></div>
             <div id="titleDiv" class="esri-widget">
-                <div id="titleText">Food - Local</div>
-                <div>Different Food - Local percent</div>
-                <div id="charts"></div>
+                <div id="titleText">Food</div>
+                <div>Different country Food Heat in suburbs</div>
+            <div id="charts"></div>
                             
         </article>
                 
@@ -274,20 +285,67 @@
         var suburbLayer = new FeatureLayer({
             url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb_info/FeatureServer/0",
         });
+
+        var template = {
+            // NAME and COUNTY are fields in the service containing the Census Tract (NAME) and county of the feature
+            title: "{name}",
+            content: [
+                {
+                type: "fields",
+                fieldInfos: [
+                    {
+                    fieldName: "food_austrilia",
+                    label: "Austrilian Food"
+                    },
+                    {
+                    fieldName: "food_china",
+                    label: "Chinese Food"
+                    },
+                    {
+                    fieldName: "food_korea",
+                    label: "Korean Food"
+                    },
+                    {
+                    fieldName: "Food_india",
+                    label: "Indian Food"
+                    },
+                    {
+                    fieldName: "Food_greece",
+                    label: "Greek Food"
+                    },
+                    {
+                    fieldName: "Food_italy",
+                    label: "Italian Food"
+                    },
+                    {
+                    fieldName: "Food_thai",
+                    label: "Thai Food"
+                    }
+                ]
+                }
+            ]
+        };
+
         map.add(suburbLayer, 0);
-        view.ui.add("titleDiv", "top-right");
+        view.ui.add("titleDiv", "bottom-right");
+        suburbLayer.popupTemplate = template;
 
-        const foodNodes = document.querySelectorAll(`.food-item`);
-        const foodElement = document.getElementById("foods-filter");
 
-        foodElement.addEventListener("click", filterByFood);
 
-        function filterByFood(event) {
-          const selectedSFood = event.target.getAttribute("data-season");
-          floodLayerView.filter = {
-            where: " = '" + selectedSeason + "'"
-          };
-        }
+        // const foodNodes = document.querySelectorAll(`.food-item`);
+        // const foodElement = document.getElementById("foods-filter");
+
+        // foodElement.addEventListener("click", filterByFood);
+
+        // function filterByFood(event) {
+        //   const selectedSFood = event.target.getAttribute("data-season");
+        //   floodLayerView.filter = {
+        //     where: " = '" + selectedSeason + "'"
+        //   };
+        // }
+
+        
+        
 
     })
 </script>

@@ -151,6 +151,17 @@
             height: 470px;
         }
 
+        #titleDiv {
+            padding: 10px;
+            height: 70px;
+        }
+
+        #titleText {
+            font-size: 20pt;
+            font-weight: 60;
+            padding-bottom: 10px;
+        }
+
         .article chartContainer h2 {
             padding-top: 110px;
             margin-top: -110px;
@@ -193,6 +204,9 @@
                         </aside>
                     <article class="article">
             <div id="mapviewDiv"></div>
+            <div id="titleDiv" class="esri-widget">
+                <div id="titleText">Exercise</div>
+                <div>Different Execise Heat in suburbs</div>
             <div id="charts"></div>
                         
         </article>
@@ -227,7 +241,63 @@
         var suburbLayer = new FeatureLayer({
             url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb_info/FeatureServer/0",
         });
+
+        var template = {
+            // NAME and COUNTY are fields in the service containing the Census Tract (NAME) and county of the feature
+            title: "{name}",
+            content: [
+                {
+                type: "fields",
+                fieldInfos: [
+                    {
+                    fieldName: "sport_cycling",
+                    label: "Cycling"
+                    },
+                    {
+                    fieldName: "sport_rugby",
+                    label: "Rugby"
+                    },
+                    {
+                    fieldName: "sport_basketball",
+                    label: "Basketball"
+                    },
+                    {
+                    fieldName: "sport_horsing",
+                    label: "Horsing"
+                    },
+                    {
+                    fieldName: "sport_tennis",
+                    label: "Tennis"
+                    },
+                    {
+                    fieldName: "sport_golf",
+                    label: "Golf"
+                    },
+                    {
+                    fieldName: "sport_swimming",
+                    label: "Swimming"
+                    },
+                    {
+                    fieldName: "sport_soccer",
+                    label: "Soccer"
+                    },
+                    {
+                    fieldName: "sport_dancing",
+                    label: "Dancing"
+                    },
+                    {
+                    fieldName: "sport_karate",
+                    label: "Karate"
+                    },
+                ]
+                }
+            ]
+        };
+
+
         map.add(suburbLayer, 0);
+        view.ui.add("titleDiv","bottom-right");
+        suburbLayer.popupTemplate = template;
     })
 </script>
 
