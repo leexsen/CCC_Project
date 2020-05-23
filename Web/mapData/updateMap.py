@@ -60,8 +60,7 @@ def get_median_age():
         if item.value is not None and item.key.lower() != "west melbourne":
             suburb = item.key.lower()
             median_age = item.value
-            if suburb in dict:
-                dict[suburb]["median_age"] = median_age
+            dict[suburb]["median_age"] = median_age
     print("age data", dict)
     return dict
 
