@@ -23,6 +23,7 @@ def get_food_data(suburb):
         if suburb in suburbs:
             food_percentage = suburbs[suburb]["food_percent"]
             dict[food_country] = food_percentage
+    # print("food data", dict)
     return dict
 
 
@@ -62,7 +63,7 @@ def get_median_age():
             median_age = item.value
             dict[suburb] = {}
             dict[suburb]["median_age"] = median_age
-    print("age data", dict)
+    # print("age data", dict)
     return dict
 
 
@@ -73,7 +74,6 @@ def write2json():
     features = suburbs_json["features"]
     food_countries = ["china", "japan", "korea", "india", "australia", "greece", "italy", "thai"]
     sports = ["cycling", "rugby", "basketball", "horsing", "tennis", "golf", "swimming", "dancing", "soccer", "karate"]
-    i = 0
     for feature in features:
         properties = feature["properties"]
         suburb = properties["name"].lower()
@@ -105,19 +105,17 @@ def write2json():
         median_ages = get_median_age()
         if suburb in median_ages:
             properties["median_age"] = median_ages[suburb]["median_age"]
-            print(i)
-            i += 1
         else:
             properties["median_age"] = "null"
 
-    print(i)
+    suburb_str = json.dumps(suburbs_json)
+    suburb_str.replace('\'', '\"').replace("None", "null")
     # map_food_db.save(suburbs_json)  # save to mydatabase
 
-    # output = open("suburb_info-1589933179300.json", 'w')
-    # output.write(str(suburbs_json))
+    output = open("suburb_info-1589933179300.json", 'w')
+    output.write(suburb_str)
 
-
-# print(suburbs_json) # the json contains all data
+    # print(suburbs_json1) # the json contains all data
 
 def updateMap():
     gis = GIS(username="xuazhou", password="zx122333098")
@@ -133,5 +131,5 @@ def updateMap():
 #
 write2json()
 print("JSON written")
-# updateMap()
-# print("updated")
+updateMap()
+print("updated")
