@@ -46,6 +46,18 @@ def get_sleep_data():
 
     return dict
 
+def get_median_age():
+    suburb_median_age = location_time_summary_db.view('myViews/suburb_median_age')
+
+    dict = {}
+    for item in suburb_median_age:
+        if item.value is not None and item.key.lower() != 'west melbourne':
+            suburb = item.key.lower()
+            median_age = item.value
+            if suburb in dict:
+                dict[suburb]['median_age'] = median_age
+    return dict
+
 def write2json():
     with open('suburb_info.json') as suburbs:
         suburbs_json = json.load(suburbs)
@@ -82,6 +94,12 @@ def write2json():
         else:
             properties["average_person_tweets"] = 0
 
+        # add median_age data to suburbs json
+        median_ages = get_median_age()
+        if suburb in median_ages:
+            properties["median_age"] = median_ages[suburb]['median_age']
+        else:
+            properties["median_age"] = "null"
 
     # map_food_db.save(suburbs_json)  # save to mydatabase
 

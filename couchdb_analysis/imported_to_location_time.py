@@ -35,7 +35,6 @@ def find_hour(date_time):
     time_new = time.strftime('%Y/%m/%d %H', time_origin)
 
     date_hour = time_new.split(' ')
-    # date = date_hour[0]
     hour = date_hour[1]
     return hour
 
