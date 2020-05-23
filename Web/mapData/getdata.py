@@ -16,7 +16,7 @@ def get_food_data(suburb):
         food_country = doc['country'].lower()
         suburbs = doc['stats']
         if suburb in suburbs:
-            food_percentage = suburbs[suburb]['food_percent'] 
+            food_percentage = suburbs[suburb]['food_percent']
             dict[food_country] = food_percentage
     return dict
 
@@ -44,7 +44,7 @@ def get_sleep_data():
 
     return dict
 
-with open('suburb_info.json') as suburbs:
+with open('suburb_info-1589933179300.json') as suburbs:
     suburbs_json = json.load(suburbs)
 
 

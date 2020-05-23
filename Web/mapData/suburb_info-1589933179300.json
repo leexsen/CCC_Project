@@ -615,7 +615,8 @@
             "sport_dancing": 0.25,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0.012357149493635604
+            "average_person_tweets": 0.012357149493635604,
+            "median_age": "null"
         },
         "id": "localities_201908.205"
     }, {
@@ -754,7 +755,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.1656"
     }, {
@@ -2259,7 +2261,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.906"
     }, {
@@ -3599,7 +3602,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.1070"
     }, {
@@ -3843,7 +3847,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.1209"
     }, {
@@ -4193,7 +4198,8 @@
             "sport_dancing": 0.07692307692307693,
             "sport_soccer": 0.1282051282051282,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.1455"
     }, {
@@ -4912,7 +4918,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.1639"
     }, {
@@ -5737,7 +5744,8 @@
             "sport_dancing": 0.03225806451612903,
             "sport_soccer": 0.22580645161290322,
             "sport_karate": 0,
-            "average_person_tweets": 0.018495934959349595
+            "average_person_tweets": 0.018495934959349595,
+            "median_age": "null"
         },
         "id": "localities_201908.1712"
     }, {
@@ -6333,7 +6341,8 @@
             "sport_dancing": 0.35294117647058826,
             "sport_soccer": 0.029411764705882353,
             "sport_karate": 0.029411764705882353,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.2570"
     }, {
@@ -6872,7 +6881,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.1919"
     }, {
@@ -7054,7 +7064,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.2132"
     }, {
@@ -7710,7 +7721,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.2174"
     }, {
@@ -8875,7 +8887,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.2352"
     }, {
@@ -9318,7 +9331,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.2363"
     }, {
@@ -10292,7 +10306,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.3224"
     }, {
@@ -11746,7 +11761,8 @@
             "sport_dancing": 0.2647058823529412,
             "sport_soccer": 0.23529411764705882,
             "sport_karate": 0,
-            "average_person_tweets": 0.08982599153472332
+            "average_person_tweets": 0.08982599153472332,
+            "median_age": "null"
         },
         "id": "localities_201908.13685"
     }, {
@@ -11820,7 +11836,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.3356"
     }, {
@@ -11901,7 +11918,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.7778"
     }, {
@@ -12199,7 +12217,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.3524"
     }, {
@@ -12951,7 +12970,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.3525"
     }, {
@@ -13021,7 +13041,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.3567"
     }, {
@@ -16618,7 +16639,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.3600"
     }, {
@@ -18200,7 +18222,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.3640"
     }, {
@@ -19519,7 +19542,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.4139"
     }, {
@@ -19795,7 +19819,8 @@
             "sport_dancing": 0.1559633027522936,
             "sport_soccer": 0.3944954128440367,
             "sport_karate": 0.009174311926605505,
-            "average_person_tweets": 0.1653382084095064
+            "average_person_tweets": 0.1653382084095064,
+            "median_age": "null"
         },
         "id": "localities_201908.4146"
     }, {
@@ -21022,7 +21047,8 @@
             "sport_dancing": 0.20952380952380953,
             "sport_soccer": 0.1800865800865801,
             "sport_karate": 0.0017316017316017316,
-            "average_person_tweets": 0.3390594945944153
+            "average_person_tweets": 0.3390594945944153,
+            "median_age": "null"
         },
         "id": "localities_201908.4206"
     }, {
@@ -21676,7 +21702,8 @@
             "sport_dancing": 0.3333333333333333,
             "sport_soccer": 0.2222222222222222,
             "sport_karate": 0,
-            "average_person_tweets": 0.009206798866855524
+            "average_person_tweets": 0.009206798866855524,
+            "median_age": "null"
         },
         "id": "localities_201908.11344"
     }, {
@@ -21792,7 +21819,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.4814"
     }, {
@@ -24025,7 +24053,8 @@
             "sport_dancing": 0.3203125,
             "sport_soccer": 0.125,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.5112"
     }, {
@@ -24519,7 +24548,8 @@
             "sport_dancing": 0.109375,
             "sport_soccer": 0.25,
             "sport_karate": 0,
-            "average_person_tweets": 0.04496352016288672
+            "average_person_tweets": 0.04496352016288672,
+            "median_age": "null"
         },
         "id": "localities_201908.5167"
     }, {
@@ -24801,7 +24831,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.5344"
     }, {
@@ -25024,7 +25055,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.5361"
     }, {
@@ -25233,7 +25265,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.5404"
     }, {
@@ -26823,7 +26856,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.5576"
     }, {
@@ -27052,7 +27086,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.5588"
     }, {
@@ -27348,7 +27383,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.5630"
     }, {
@@ -27414,7 +27450,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.6056"
     }, {
@@ -28582,7 +28619,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.6082"
     }, {
@@ -29235,7 +29273,8 @@
             "sport_dancing": 0.2653061224489796,
             "sport_soccer": 0.14285714285714285,
             "sport_karate": 0,
-            "average_person_tweets": 0.03626708114759407
+            "average_person_tweets": 0.03626708114759407,
+            "median_age": "null"
         },
         "id": "localities_201908.7032"
     }, {
@@ -29507,7 +29546,8 @@
             "sport_dancing": 0.07692307692307693,
             "sport_soccer": 0.15384615384615385,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.7066"
     }, {
@@ -29879,7 +29919,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.7466"
     }, {
@@ -30504,7 +30545,8 @@
             "sport_dancing": 0.0967741935483871,
             "sport_soccer": 0.3225806451612903,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.7771"
     }, {
@@ -31189,7 +31231,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.7834"
     }, {
@@ -31304,7 +31347,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.7906"
     }, {
@@ -31791,7 +31835,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.7915"
     }, {
@@ -32100,7 +32145,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.7916"
     }, {
@@ -32794,7 +32840,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.7926"
     }, {
@@ -33870,7 +33917,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.8176"
     }, {
@@ -34120,7 +34168,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.8299"
     }, {
@@ -34217,7 +34266,8 @@
             "sport_dancing": 0.1509433962264151,
             "sport_soccer": 0.24528301886792453,
             "sport_karate": 0,
-            "average_person_tweets": 0.050289070386344864
+            "average_person_tweets": 0.050289070386344864,
+            "median_age": "null"
         },
         "id": "localities_201908.8326"
     }, {
@@ -34709,7 +34759,8 @@
             "sport_dancing": 0.13636363636363635,
             "sport_soccer": 0.2727272727272727,
             "sport_karate": 0.045454545454545456,
-            "average_person_tweets": 0.016092532059341212
+            "average_person_tweets": 0.016092532059341212,
+            "median_age": "null"
         },
         "id": "localities_201908.8625"
     }, {
@@ -34845,7 +34896,8 @@
             "sport_dancing": 0.3333333333333333,
             "sport_soccer": 0.3333333333333333,
             "sport_karate": 0.16666666666666666,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.8765"
     }, {
@@ -38209,7 +38261,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.8978"
     }, {
@@ -39019,7 +39072,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.9024"
     }, {
@@ -39161,7 +39215,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.9067"
     }, {
@@ -40456,7 +40511,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.9713"
     }, {
@@ -41554,7 +41610,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.10199"
     }, {
@@ -41971,7 +42028,8 @@
             "sport_dancing": 0.047619047619047616,
             "sport_soccer": 0.23809523809523808,
             "sport_karate": 0.09523809523809523,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.10082"
     }, {
@@ -42042,7 +42100,8 @@
             "sport_dancing": 0.36363636363636365,
             "sport_soccer": 0.07792207792207792,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.10104"
     }, {
@@ -42374,7 +42433,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.10224"
     }, {
@@ -42614,7 +42674,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.10383"
     }, {
@@ -42789,7 +42850,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.11024"
     }, {
@@ -43148,7 +43210,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.11064"
     }, {
@@ -43850,7 +43913,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.11190"
     }, {
@@ -44523,7 +44587,8 @@
             "sport_dancing": 0.26582278481012656,
             "sport_soccer": 0.21518987341772153,
             "sport_karate": 0,
-            "average_person_tweets": 0.04391592528267111
+            "average_person_tweets": 0.04391592528267111,
+            "median_age": "null"
         },
         "id": "localities_201908.11175"
     }, {
@@ -44605,7 +44670,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.11204"
     }, {
@@ -44823,7 +44889,8 @@
             "sport_dancing": 0.2978723404255319,
             "sport_soccer": 0.23404255319148937,
             "sport_karate": 0,
-            "average_person_tweets": 0.16565973900434994
+            "average_person_tweets": 0.16565973900434994,
+            "median_age": "null"
         },
         "id": "localities_201908.11296"
     }, {
@@ -44990,7 +45057,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.11403"
     }, {
@@ -45487,7 +45555,8 @@
             "sport_dancing": 0.16666666666666666,
             "sport_soccer": 0.125,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.11430"
     }, {
@@ -47172,7 +47241,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.11451"
     }, {
@@ -47501,7 +47571,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0.5555555555555556,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.12037"
     }, {
@@ -47812,7 +47883,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.12048"
     }, {
@@ -47973,7 +48045,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.12298"
     }, {
@@ -48607,7 +48680,8 @@
             "sport_dancing": 0.10526315789473684,
             "sport_soccer": 0.02631578947368421,
             "sport_karate": 0,
-            "average_person_tweets": 0.06963249516441006
+            "average_person_tweets": 0.06963249516441006,
+            "median_age": "null"
         },
         "id": "localities_201908.12973"
     }, {
@@ -48725,7 +48799,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.13728"
     }, {
@@ -48816,7 +48891,8 @@
             "sport_dancing": 0.1744186046511628,
             "sport_soccer": 0.43023255813953487,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.13769"
     }, {
@@ -50230,7 +50306,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.14030"
     }, {
@@ -50340,7 +50417,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.14110"
     }, {
@@ -51019,7 +51097,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.14527"
     }, {
@@ -51260,7 +51339,8 @@
             "sport_dancing": 0.21333333333333335,
             "sport_soccer": 0.17333333333333334,
             "sport_karate": 0.006666666666666667,
-            "average_person_tweets": 0.124278759466282
+            "average_person_tweets": 0.124278759466282,
+            "median_age": "null"
         },
         "id": "localities_201908.14775"
     }, {
@@ -51525,7 +51605,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.14944"
     }, {
@@ -54354,7 +54435,8 @@
             "sport_dancing": 0.014925373134328358,
             "sport_soccer": 0.208955223880597,
             "sport_karate": 0,
-            "average_person_tweets": 0.025276366895727518
+            "average_person_tweets": 0.025276366895727518,
+            "median_age": "null"
         },
         "id": "localities_201908.15186"
     }, {
@@ -55225,7 +55307,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.15324"
     }, {
@@ -55817,7 +55900,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.15500"
     }, {
@@ -56650,7 +56734,8 @@
             "sport_dancing": 0.2894736842105263,
             "sport_soccer": 0.2894736842105263,
             "sport_karate": 0,
-            "average_person_tweets": 0.2983257229832572
+            "average_person_tweets": 0.2983257229832572,
+            "median_age": "null"
         },
         "id": "localities_201908.15623"
     }, {
@@ -57413,7 +57498,8 @@
             "sport_dancing": 0,
             "sport_soccer": 0,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.15726"
     }, {
@@ -58207,7 +58293,8 @@
             "sport_dancing": 0.25925925925925924,
             "sport_soccer": 0.14814814814814814,
             "sport_karate": 0,
-            "average_person_tweets": 0
+            "average_person_tweets": 0,
+            "median_age": "null"
         },
         "id": "localities_201908.15894"
     }]
