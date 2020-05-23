@@ -143,13 +143,13 @@
             width: 100%;
         }
 
-        #seasons-filter {
-            height: 160px;
+        #foods-filter {
+            height: 320px;
             width: 100%;
             visibility: hidden;
         }
 
-        .season-item {
+        .food-item {
             width: 100%;
             padding: 12px;
             text-align: center;
@@ -158,11 +158,11 @@
             height: 40px;
         }
 
-        .season-item:focus {
+        .food-item:focus {
             background-color: dimgrey;
         }
 
-        .season-item:hover {
+        .food-item:hover {
             background-color: dimgrey;
         }
 
@@ -184,16 +184,6 @@
             font-weight: 30;
             padding-bottom: 10px;
         }
-
-        /* #info {
-            background-color: black;
-            opacity: 0.75;
-            color: orange;
-            font-size: 18pt;
-            padding: 8px;
-            visibility: hidden;
-        } */
-
 
         .article chartContainer h2 {
             padding-top: 110px;
@@ -234,16 +224,16 @@
             </ul>
                 </aside>
         <article class="article">
-            <!-- <div id="food-filter" class="esri-widget">
-                <div class="food-item visible-food" data-food="australia">Australian</div>
-                <div class="food-item visible-food" data-food="china">Chinese</div>
-                <div class="food-item visible-food" data-food="greece">Greek</div>
-                <div class="food-item visible-food" data-food="india">Indian</div>
-                <div class="food-item visible-food" data-food="italy">Italian</div>
-                <div class="food-item visible-food" data-food="japan">Japanese</div>
-                <div class="food-item visible-food" data-food="korea">Korean</div>
-                <div class="food-item visible-food" data-food="thai">Thai</div>
-            </div> -->
+            <div id="foods-filter" class="esri-widget">
+                <div class="food-item visible-food" data-food="food_australia">Australian</div>
+                <div class="food-item visible-food" data-food="food_china">Chinese</div>
+                <div class="food-item visible-food" data-food="food_greece">Greek</div>
+                <div class="food-item visible-food" data-food="food_india">Indian</div>
+                <div class="food-item visible-food" data-food="food_italy">Italian</div>
+                <div class="food-item visible-food" data-food="food_japan">Japanese</div>
+                <div class="food-item visible-food" data-food="food_korea">Korean</div>
+                <div class="food-item visible-food" data-food="food_thai">Thai</div>
+            </div>
             <div id="mapviewDiv"></div>
             <div id="titleDiv" class="esri-widget">
                 <div id="titleText">Food</div>
@@ -271,7 +261,7 @@
 <script>
     require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/widgets/Expand"], function (Map,
         MapView, FeatureLayer, Expand) {
-        let floodLayerView;
+        let foodLayerView;
         var map = new Map({
             basemap: "gray"
         });
@@ -306,19 +296,19 @@
                     label: "Korean Food"
                     },
                     {
-                    fieldName: "Food_india",
+                    fieldName: "food_india",
                     label: "Indian Food"
                     },
                     {
-                    fieldName: "Food_greece",
+                    fieldName: "food_greece",
                     label: "Greek Food"
                     },
                     {
-                    fieldName: "Food_italy",
+                    fieldName: "food_italy",
                     label: "Italian Food"
                     },
                     {
-                    fieldName: "Food_thai",
+                    fieldName: "food_thai",
                     label: "Thai Food"
                     }
                 ]
@@ -330,23 +320,37 @@
         view.ui.add("titleDiv", "bottom-right");
         suburbLayer.popupTemplate = template;
 
+        const foodNodes = document.querySelectorAll(`.food-item`);
+        const foodElement = document.getElementById("foods-filter");
 
+        foodElement.addEventListener("click", filterByFood);
 
-        // const foodNodes = document.querySelectorAll(`.food-item`);
-        // const foodElement = document.getElementById("foods-filter");
+        function filterByFood(event) {
+          const selectedSFood = event.target.getAttribute("data-season");
+          foodLayerView.filter = {
+            where: selectedSFood
+          };
+        }
 
-        // foodElement.addEventListener("click", filterByFood);
+        console.log(foodLayerView.fieldName);
 
-        // function filterByFood(event) {
-        //   const selectedSFood = event.target.getAttribute("data-season");
-        //   floodLayerView.filter = {
-        //     where: " = '" + selectedSeason + "'"
-        //   };
-        // }
+        view.whenLayerView(suburbLayer).then(function(layerView) {
+            foodLayerView = layerView;
+            foodElement.style.visibility = "visible";
+            const foodExpand = new Expand({
+                view: view,
+                content: foodElement,
+                expandIconClass: "esri-icon-filter",
+                group: "top-left"
+            });
+            foodExpand.watch("expanded", function() {
+            if (!foodExpand.expanded) {
+                foodLayerView.filter = null;
+            }
+          });
 
-        
-        
-
+            view.ui.add(foodExpand, "top-left");
+    });
     })
 </script>
 
