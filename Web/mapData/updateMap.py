@@ -18,9 +18,10 @@ def get_food_data(suburb):
         food_country = doc['country'].lower()
         suburbs = doc['stats']
         if suburb in suburbs:
-            food_percentage = suburbs[suburb]['food_percent'] 
+            food_percentage = suburbs[suburb]['food_percent']
             dict[food_country] = food_percentage
     return dict
+
 
 def get_sport_data(suburb):
     dict = {}
@@ -32,6 +33,7 @@ def get_sport_data(suburb):
             exercise_percentage = suburbs[suburb]['sport_percent']
             dict[sport] = exercise_percentage
     return dict
+
 
 def get_sleep_data():
     average_person_tweet_view = location_time_summary_db.view('myViews/avarage_person_tweet')
@@ -46,6 +48,7 @@ def get_sleep_data():
 
     return dict
 
+
 def get_median_age():
     suburb_median_age = location_time_summary_db.view('myViews/suburb_median_age')
 
@@ -58,14 +61,14 @@ def get_median_age():
                 dict[suburb]['median_age'] = median_age
     return dict
 
+
 def write2json():
     with open('suburb_info.json') as suburbs:
         suburbs_json = json.load(suburbs)
 
-
     features = suburbs_json['features']
-    food_countries = ["china",  "japan", "korea", "india",  "australia",  "greece", "italy", "thai"]
-    sports = ["cycling", "rugby",  "basketball",  "horsing",  "tennis", "golf", "swimming",  "dancing",  "soccer", "karate"]
+    food_countries = ["china", "japan", "korea", "india", "australia", "greece", "italy", "thai"]
+    sports = ["cycling", "rugby", "basketball", "horsing", "tennis", "golf", "swimming", "dancing", "soccer", "karate"]
 
     for feature in features:
         properties = feature["properties"]
@@ -103,9 +106,9 @@ def write2json():
 
     # map_food_db.save(suburbs_json)  # save to mydatabase
 
-
-    output = open('new_suburbs.json', 'w')
+    output = open('suburb_info.json', 'w')
     output.write(str(suburbs_json))
+
 
 # print(suburbs_json) # the json contains all data
 
@@ -120,6 +123,9 @@ def updateMap():
     print(suburb_collection.properties)
     suburb_collection.manager.overwrite('suburb_info.json')
 
+
 if '__name__' == '__main__':
     write2json()
+    print("JSON written")
     updateMap()
+    print("updated")
