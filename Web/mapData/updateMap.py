@@ -9,6 +9,9 @@ couch = couchdb.Server("http://admin:admin123@172.26.132.238:4000//")
 db_food = couch["final_food"]  # access to database "final_food"
 db_sport = couch["final_sport"]  # access the database "final_sport"
 location_time_summary_db = couch["location_time_summary"]  # access the database location_time_summary
+print("load couchDB")
+print("food", db_food)
+print("sport", db_sport)
 
 
 def get_food_data(suburb):
@@ -59,6 +62,7 @@ def get_median_age():
             median_age = item.value
             if suburb in dict:
                 dict[suburb]["median_age"] = median_age
+    print("age data", dict)
     return dict
 
 
@@ -69,7 +73,7 @@ def write2json():
     features = suburbs_json["features"]
     food_countries = ["china", "japan", "korea", "india", "australia", "greece", "italy", "thai"]
     sports = ["cycling", "rugby", "basketball", "horsing", "tennis", "golf", "swimming", "dancing", "soccer", "karate"]
-
+    i = 0
     for feature in features:
         properties = feature["properties"]
         suburb = properties["name"].lower()
@@ -101,13 +105,16 @@ def write2json():
         median_ages = get_median_age()
         if suburb in median_ages:
             properties["median_age"] = median_ages[suburb]["median_age"]
+            print(i)
+            i += 1
         else:
             properties["median_age"] = "null"
 
+    print(i)
     # map_food_db.save(suburbs_json)  # save to mydatabase
 
-    output = open("suburb_info-1589933179300.json", 'w')
-    output.write(str(suburbs_json))
+    # output = open("suburb_info-1589933179300.json", 'w')
+    # output.write(str(suburbs_json))
 
 
 # print(suburbs_json) # the json contains all data
@@ -124,7 +131,7 @@ def updateMap():
     suburb_collection.manager.overwrite('suburb_info-1589933179300.json')
 
 #
-# write2json()
-# print("JSON written")
-updateMap()
-print("updated")
+write2json()
+print("JSON written")
+# updateMap()
+# print("updated")
