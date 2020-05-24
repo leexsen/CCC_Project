@@ -138,8 +138,6 @@
 
         .article chartContainer {
             padding-top: 100px;
-            /* margin-top: -120px; */
-            /* height: 300px; */
             width: 100%;
         }
 
@@ -171,7 +169,7 @@
             margin-top: -115px;
             width: 95%;
             padding-right: 10px;
-            height: 470px;
+            height: 95%;
         }
 
         #titleDiv {
@@ -194,20 +192,129 @@
             width: 95%;
             height: 275px;
         }
+
+        .loading {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            background-color: #000
+        }
+
+        @keyframes lds-cube {
+            0% {
+                -webkit-transform: scale(1.5);
+                transform: scale(1.5)
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+
+        @-webkit-keyframes lds-cube {
+            0% {
+                -webkit-transform: scale(1.5);
+                transform: scale(1.5)
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+
+        .lds-cube {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0
+        }
+
+        .lds-cube div {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 10px;
+            left: 10px;
+            background: #1d3f72;
+            -webkit-animation: lds-cube 1s cubic-bezier(0, .5, .5, 1) infinite;
+            animation: lds-cube 1s cubic-bezier(0, .5, .5, 1) infinite;
+            -webkit-animation-delay: -.3s;
+            animation-delay: -.3s
+        }
+
+        .lds-cube div:nth-child(2) {
+            top: 10px;
+            left: 110px;
+            background: #5699d2;
+            -webkit-animation-delay: -.2s;
+            animation-delay: -.2s
+        }
+
+        .lds-cube div:nth-child(3) {
+            top: 110px;
+            left: 110px;
+            background: #71c2cc;
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s
+        }
+
+        .lds-cube div:nth-child(4) {
+            top: 110px;
+            left: 10px;
+            background: #d8ebf9;
+            -webkit-animation-delay: -.1s;
+            animation-delay: -.1s
+        }
+
+        .lds-cube {
+            width: 200px !important;
+            height: 200px !important;
+            -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+            transform: translate(-100px, -100px) scale(1) translate(100px, 100px)
+        }
+
+        .list-img {
+            font-size: 0;
+        }
+
+        .list-img img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
     </style>
 </head>
 
 <body>
+    <div class="loading">
+        <div class="lds-css ng-scope">
+            <div class="lds-cube">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
     <header class="header text-size24">
         <hgroup class="title">Cluster and Cloud Computing</hgroup>
         <nav class="nav">
             <ul>
                 <li>First</li>
-                <li><a href="http://127.0.0.1:5000/exercise_page" , target="_blank">Second</a></li>
-                <li><a href="http://127.0.0.1:5000/sleep_page" , target="_blank">Third</a></li>
+                <li><a href="http://127.0.0.1:5000/web/exercise_page" , target="_blank">Second</a></li>
+                <li><a href="http://127.0.0.1:5000/web/sleep_page" , target="_blank">Third</a></li>
             </ul>
-        </nav>
-            
+        </nav>  
     </header>
         <section>
                 <aside class="aside"> 
@@ -224,7 +331,7 @@
             </ul>
                 </aside>
         <article class="article">
-            <div id="foods-filter" class="esri-widget">
+            <!-- <div id="foods-filter" class="esri-widget">
                 <div class="food-item visible-food" data-food="food_australia">Australian</div>
                 <div class="food-item visible-food" data-food="food_china">Chinese</div>
                 <div class="food-item visible-food" data-food="food_greece">Greek</div>
@@ -233,13 +340,14 @@
                 <div class="food-item visible-food" data-food="food_japan">Japanese</div>
                 <div class="food-item visible-food" data-food="food_korea">Korean</div>
                 <div class="food-item visible-food" data-food="food_thai">Thai</div>
-            </div>
+            </div> -->
             <div id="mapviewDiv"></div>
             <div id="titleDiv" class="esri-widget">
                 <div id="titleText">Food</div>
                 <div>Different country Food Heat in suburbs</div>
+            </div>
             <div id="charts"></div>
-                            
+                        
         </article>
                 
     </section>
@@ -248,16 +356,23 @@
 </body>
 
 </html>
-
+<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/dataviz.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
 <script src="https://js.arcgis.com/4.15/"></script>
+<script>
+    document.onreadystatechange = function () {
+        //console.log(document.readyState);
+        if (document.readyState == "complete") {
+            $('.loading').fadeOut();
+        }
+    }
+</script>
 <script>
     require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/widgets/Expand"], function (Map,
         MapView, FeatureLayer, Expand) {
@@ -269,7 +384,7 @@
             container: "mapviewDiv", // Reference to the scene div created in step 5
             map: map, // Reference to the map object created before the scene
             zoom: 10, // Sets zoom level based on level of detail (LOD)
-            center: [144.96, -37.81] // Sets center point of view using longitude,latitude
+            center: [145.06, -37.91] // Sets center point of view using longitude,latitude
         });
 
         var suburbLayer = new FeatureLayer({
@@ -279,41 +394,38 @@
         var template = {
             // NAME and COUNTY are fields in the service containing the Census Tract (NAME) and county of the feature
             title: "{name}",
-            content: [
-                {
+            content: [{
                 type: "fields",
-                fieldInfos: [
-                    {
-                    fieldName: "food_austrilia",
-                    label: "Austrilian Food"
+                fieldInfos: [{
+                        fieldName: "food_austrilia",
+                        label: "Austrilian Food"
                     },
                     {
-                    fieldName: "food_china",
-                    label: "Chinese Food"
+                        fieldName: "food_china",
+                        label: "Chinese Food"
                     },
                     {
-                    fieldName: "food_korea",
-                    label: "Korean Food"
+                        fieldName: "food_korea",
+                        label: "Korean Food"
                     },
                     {
-                    fieldName: "food_india",
-                    label: "Indian Food"
+                        fieldName: "food_india",
+                        label: "Indian Food"
                     },
                     {
-                    fieldName: "food_greece",
-                    label: "Greek Food"
+                        fieldName: "food_greece",
+                        label: "Greek Food"
                     },
                     {
-                    fieldName: "food_italy",
-                    label: "Italian Food"
+                        fieldName: "food_italy",
+                        label: "Italian Food"
                     },
                     {
-                    fieldName: "food_thai",
-                    label: "Thai Food"
+                        fieldName: "food_thai",
+                        label: "Thai Food"
                     }
                 ]
-                }
-            ]
+            }]
         };
 
         map.add(suburbLayer, 0);
@@ -323,34 +435,36 @@
         const foodNodes = document.querySelectorAll(`.food-item`);
         const foodElement = document.getElementById("foods-filter");
 
-        foodElement.addEventListener("click", filterByFood);
+        // foodElement.addEventListener("click", filterByFood);
 
-        function filterByFood(event) {
-          const selectedSFood = event.target.getAttribute("data-season");
-          foodLayerView.filter = {
-            where: selectedSFood
-          };
-        }
+        // function filterByFood(event) {
+        //     const selectedSFood = event.target.getAttribute("data-season");
+        //     foodLayerView.filter = {
+        //         where: selectedSFood
+        //     };
+        // }
 
-        console.log(foodLayerView.fieldName);
 
-        view.whenLayerView(suburbLayer).then(function(layerView) {
-            foodLayerView = layerView;
-            foodElement.style.visibility = "visible";
-            const foodExpand = new Expand({
-                view: view,
-                content: foodElement,
-                expandIconClass: "esri-icon-filter",
-                group: "top-left"
-            });
-            foodExpand.watch("expanded", function() {
-            if (!foodExpand.expanded) {
-                foodLayerView.filter = null;
-            }
-          });
 
-            view.ui.add(foodExpand, "top-left");
-    });
+        // view.whenLayerView(suburbLayer).then(function (layerView) {
+        //     foodLayerView = layerView;
+        //     // console.log("2", foodLayerView.availableFields);
+
+        //     // foodElement.style.visibility = "visible";
+        //     const foodExpand = new Expand({
+        //         view: view,
+        //         content: foodElement,
+        //         expandIconClass: "esri-icon-filter",
+        //         group: "top-left"
+        //     });
+        //     foodExpand.watch("expanded", function () {
+        //         if (!foodExpand.expanded) {
+        //             foodLayerView.filter = null;
+        //         }
+        //     });
+
+        //     // view.ui.add(foodExpand, "top-left");
+        // });
     })
 </script>
 
@@ -361,13 +475,10 @@
         type: 'GET',
         async: false,
         success: function (result) {
-            // console.log("result",result);
             food_jason = result;
-            // console.log("result: ", food_jason);
-            // final(food_jason);
+
         }
     });
-    // console.log(food_jason);
 
 
     var html = '';

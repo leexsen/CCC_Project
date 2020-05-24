@@ -128,7 +128,7 @@ def updateMap():
     print(suburb_collection.properties)
     suburb_collection.manager.overwrite('suburb_info-1589933179300.json')
 
-#
+
 write2json()
 print("JSON written")
 updateMap()
