@@ -4,183 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Result</title>
-    <style type="text/css">
-        body {
-            height: 100%;
-            margin: 0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .header {
-            position: absolute;
-            height: 90px;
-            line-height: 90px;
-            left: 0;
-            right: 0;
-            z-index: 1;
-            -webkit-box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
-            box-shadow: 0 10px 10px 0 rgba(17, 103, 166, 0.10);
-            padding: 0px 0px 0px 30px;
-            background: rgb(238, 238, 238);
-            /* overflow: hidden; */
-        }
-
-        .title,
-        .nav,
-        .username-show {
-            float: left;
-        }
-
-        .title {
-            font-weight: bold;
-            color: rgb(34, 87, 185);
-        }
-
-        .nav {
-            margin-left: 60px;
-        }
-
-        .nav ul {
-            list-style: none;
-            padding-left: 0;
-            /* border: 1px solid gray; */
-            display: inline-block;
-            padding: 0px;
-            border-radius: 5px;
-        }
-
-        .nav ul li {
-            display: inline;
-            padding: 30px;
-        }
-
-        .nav ul li:hover {
-            background-color: #cfcfcf;
-            cursor: pointer;
-            border-radius: 5px;
-            color: rgb(140, 133, 235);
-            font-weight: bold;
-        }
-
-        .nav ul li a {
-            text-decoration: none;
-        }
-
-        .section-right {
-            float: right;
-        }
-
-        .aside {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            color: #FFF;
-            width: 250px;
-            background: #1A293A;
-            padding: 70px 0px 0px 0px;
-            overflow: auto;
-            text-align: center;
-
-
-        }
-
-        .aside ul {
-            list-style: none;
-            padding-left: 0;
-            padding-top: 0px;
-            /* border: 1px solid gray; */
-            display: line;
-            /* padding:0px; */
-            border-radius: 5px;
-        }
-
-        .aside ul li {
-            padding: 30px;
-        }
-
-        .aside ul li:hover {
-            background-color: #403750;
-            cursor: pointer;
-            border-radius: 5px;
-            /* color: rgb(83, 158, 146); */
-            font-weight: inherit;
-        }
-
-        .aside ul li a {
-            text-decoration: none;
-            color: #C0C2C5;
-        }
-
-        .article {
-            position: absolute;
-            left: 250px;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            padding: 110px 0px 0px 15px;
-            overflow: auto;
-            background: #f5f5f5;
-        }
-
-        .article h2 {
-            font-weight: inherit;
-
-        }
-
-        #charts {
-            padding-top: 20px;
-        }
-
-        .article chartContainer {
-            padding-top: 100px;
-            /* margin-top: -120px; */
-            /* height: 300px; */
-            width: 100%;
-        }
-
-        #mapviewDiv {
-            padding-top: 115px;
-            margin-top: -115px;
-            width: 95%;
-            padding-right: 10px;
-            height: 95%;
-        }
-
-        #titleDiv {
-            padding: 10px;
-            height: 70px;
-        }
-
-        #titleText {
-            font-size: 20pt;
-            font-weight: 60;
-            padding-bottom: 10px;
-        }
-
-
-        .article chartContainer h2 {
-            padding-top: 110px;
-            margin-top: -110px;
-        }
-
-        .article chartContainer div {
-            width: 95%;
-            height: 100%;
-        }
-
-        #chartdiv1 {
-            width: 95%;
-            height: 300px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../static/core.css">
 </head>
 
 <body>
+    <div class="loading">
+        <div class="lds-css ng-scope">
+            <div class="lds-cube">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
     <header class="header text-size24">
         <hgroup class="title">Cluster and Cloud Computing</hgroup>
         <nav class="nav">
@@ -189,17 +26,16 @@
                 <li><a href="http://127.0.0.1:5000/web/exercise_page" , target="_blank">Second</a></li>
                 <li>Third</a></li>
             </ul>
-        </nav>
-            
+        </nav>     
     </header>
         <section>
                 <aside class="aside"> 
-            <ul class="tab">
-                <li><a href="#mapviewDiv">Top</a></li>
-                <li><a href="#result">Result</a></li>
-            </ul>
-                        </aside>
-                    <article class="article">
+                    <ul class="tab">
+                        <li><a href="#mapviewDiv">Top</a></li>
+                        <li><a href="#result">Result</a></li>
+                    </ul>
+                </aside>
+        <article class="article">
             <div id="mapviewDiv"></div>
             <div id="titleDiv" class="esri-widget">
                 <div id="titleText">Sleep</div>
@@ -217,9 +53,7 @@
     <!--<footer>尾部</footer>-->
         
 </body>
-
 </html>
-
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
@@ -228,6 +62,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
 <script src="https://js.arcgis.com/4.15/"></script>
+<script>
+    document.onreadystatechange = function () {
+        //console.log(document.readyState);
+        if (document.readyState == "complete") {
+            $('.loading').fadeOut();
+        }
+    }
+</script>
 <script>
     require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", ], function (Map, MapView, FeatureLayer) {
 
@@ -248,92 +90,23 @@
         var template = {
             // NAME and COUNTY are fields in the service containing the Census Tract (NAME) and county of the feature
             title: "{name}",
-            content: [
-                {
+            content: [{
                 type: "fields",
-                fieldInfos: [
-                    {
-                    fieldName: "average_person_tweets",
-                    label: "Average tweets per person"
+                fieldInfos: [{
+                        fieldName: "average_person_tweets",
+                        label: "Average tweets per person"
                     },
                     {
-                    fieldName: "median_age",
-                    label: "Median age"
+                        fieldName: "median_age",
+                        label: "Median age"
                     },
                 ]
-                }
-            ]
+            }]
         };
 
         map.add(suburbLayer, 0);
-        view.ui.add("titleDiv","bottom-right");
+        view.ui.add("titleDiv", "bottom-right");
         suburbLayer.popupTemplate = template;
     })
 </script>
-
-<script>
-    let sleep_json = {};
-    $.ajax({
-        url: 'http://127.0.0.1:5000/sleep',
-        type: 'GET',
-        async: false,
-        success: function (result) {
-            // console.log("result",result);
-            sleep_json = result;
-            // console.log("result: ", sleep_json);
-        }
-    });
-    console.log(sleep_json);
-
-    am4core.ready(function () {
-        // Themes begin
-        am4core.useTheme(am4themes_dataviz);
-        am4core.useTheme(am4themes_animated);
-        // Themes end
-
-        function getDataPoint(jsonStr) {
-            console.log("DataJSON", jsonStr);
-            var data = [];
-            for (var state in jsonStr) {
-                var age = jsonStr[state].median_age;
-                var avg_tweet = jsonStr[state].average_person_tweet;
-                data.push({
-                    median_age: age,
-                    average_person_tweet: avg_tweet
-                });
-            }
-            return data;
-        }
-
-        function createXYChart(data, divName) {
-            var chart = am4core.create(divName, am4charts.XYChart);
-            chart.data = data;
-            // Create axes
-            var XAxis = chart.xAxes.push(new am4charts.ValueAxis());
-            // XAxis.renderer.minGridDistance = 3;
-
-            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            // valueAxis.renderer.minGridDistance=1;
-
-            // Create series
-            var series = chart.series.push(new am4charts.ColumnSeries());
-            series.dataFields.valueY = "average_person_tweet";
-            series.dataFields.valueX = "median_age";
-
-            var bullet = series.bullets.push(new am4charts.CircleBullet());
-            bullet.circle.radius = 5;
-            bullet.circle.fill = am4core.color('blue');
-
-            series.tooltip.pointerOrientation = "vertical";
-
-            chart.cursor = new am4charts.XYCursor();
-            chart.cursor.snapToSeries = series;
-            chart.cursor.xAxis = XAxis;
-
-            // chart.scrollbarY = new am4core.Scrollbar();
-            chart.scrollbarX = new am4core.Scrollbar();
-        }
-
-        createXYChart(data = getDataPoint(sleep_json), "chartdiv1");
-    });
-</script>
+<script src="../static/sleep_chart.js"></script>
