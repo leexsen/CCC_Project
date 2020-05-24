@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Result</title>
     <link rel="stylesheet" type="text/css" href="../static/core.css"> 
 </head>
-
 <body>
     <div class="loading">
         <div class="lds-css ng-scope">
@@ -28,8 +26,8 @@
             </ul>
         </nav>  
     </header>
-    <section>
-        <aside class="aside"> 
+        <section>
+                <aside class="aside"> 
             <ul class="tab">
                 <li><a href="#mapviewDiv">Top</a></li>
                 <li><a href="#australia">Australian Food</a></li>
@@ -41,7 +39,7 @@
                 <li><a href="#korea">Korean Food</a></li>
                 <li><a href="#thai">Thai Food</a></li>
             </ul>
-        </aside>
+                </aside>
         <article class="article">
             <!-- <div id="foods-filter" class="esri-widget">
                 <div class="food-item visible-food" data-food="food_australia">Australian</div>
@@ -58,11 +56,10 @@
                 <div id="titleText">Food</div>
                 <div>Different country Food Heat in suburbs</div>
             </div>
-            <div id="charts"></div>          
-        </article>       
+            <div id="charts"></div>                   
+        </article>              
     </section>
 </body>
-
 </html>
 <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
@@ -96,9 +93,7 @@
         });
 
         var suburbLayer = new FeatureLayer({
-            portalItem: {  // autocasts as esri/portal/PortalItem
-                id: "a6bb1278495f42b58fcae4f17851972e"
-            }
+            url: "a6bb1278495f42b58fcae4f17851972e",
         });
 
         var template = {
@@ -137,7 +132,6 @@
                 ]
             }]
         };
-
         map.add(suburbLayer, 0);
         view.ui.add("titleDiv", "bottom-right");
         suburbLayer.popupTemplate = template;
