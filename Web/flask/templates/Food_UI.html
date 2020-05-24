@@ -93,7 +93,9 @@
         });
 
         var suburbLayer = new FeatureLayer({
-            url: "a6bb1278495f42b58fcae4f17851972e",
+            portalItem: {  // autocasts as esri/portal/PortalItem
+                id: "a6bb1278495f42b58fcae4f17851972e"
+            }
         });
 
         var template = {
@@ -135,6 +137,16 @@
         map.add(suburbLayer, 0);
         view.ui.add("titleDiv", "bottom-right");
         suburbLayer.popupTemplate = template;
+
+        view.popup = {
+            dockEnabled: true,
+            dockOptions: {
+                // Disables the dock button from the popup
+                buttonEnabled: true,
+                // Ignore the default sizes that trigger responsive docking
+                breakpoint: true
+            }
+        };
 
         const foodNodes = document.querySelectorAll(`.food-item`);
         const foodElement = document.getElementById("foods-filter");
