@@ -9,6 +9,8 @@ couch = couchdb.Server("http://admin:admin123@172.26.132.238:4000//")
 db_food = couch["final_food"]  # access to database "final_food"
 db_sport = couch["final_sport"]  # access the database "final_sport"
 location_time_summary_db = couch["location_time_summary"]  # access the database location_time_summary
+db_suburb_food = couch["suburb_food"]
+db_suburb_sport = couch["suburb_sport"]
 print("load couchDB")
 print("food", db_food)
 print("sport", db_sport)
@@ -66,6 +68,21 @@ def get_median_age():
     # print("age data", dict)
     return dict
 
+def get_suburb_food():
+    dic = {}
+    for id in db_suburb_food:
+        suburb = db_suburb_food[id]['suburb: ']
+        total_tweets = db_suburb_food[id]['total tweets: ']
+        dic[suburb] = total_tweets
+    return dic
+
+def get_suburb_sport():
+    dic = {}
+    for id in db_suburb_sport:
+        suburb = db_suburb_sport[id]['suburb: ']
+        total_tweets = db_suburb_sport[id]['total tweets: ']
+        dic[suburb] = total_tweets
+    return dic
 
 def write2json():
     with open("suburb_info-1589933179300.json") as suburbs:
@@ -82,7 +99,7 @@ def write2json():
         country_percents = get_food_data(suburb)
         for food_country in food_countries:
             if food_country not in country_percents:
-                properties["food_" + food_country] = 0
+                properties["food_" + food_country] = "null"
             else:
                 properties["food_" + food_country] = country_percents[food_country]
 
@@ -90,7 +107,7 @@ def write2json():
         sport_percents = get_sport_data(suburb)
         for sport in sports:
             if sport not in sport_percents:
-                properties["sport_" + sport] = 0
+                properties["sport_" + sport] = "null"
             else:
                 properties["sport_" + sport] = sport_percents[sport]
 
@@ -99,7 +116,7 @@ def write2json():
         if suburb in average_person_tweets:
             properties["average_person_tweets"] = average_person_tweets[suburb]["average_person_tweet"]
         else:
-            properties["average_person_tweets"] = 0
+            properties["average_person_tweets"] = "null"
 
         # add median_age data to suburbs json
         median_ages = get_median_age()
@@ -107,6 +124,21 @@ def write2json():
             properties["median_age"] = median_ages[suburb]["median_age"]
         else:
             properties["median_age"] = "null"
+
+        # add suburb_food data to suburbs json
+        suburb_food = get_suburb_food()
+        if suburb in suburb_food:
+            properties["food_total"] = suburb_food[suburb]
+        else:
+            properties["food_total"] = "null"
+
+        # add suburb_sport data to suburbs json
+        suburb_sports = get_suburb_sport()
+        if suburb in suburb_sports:
+            properties["sports_total"] = suburb_sports[suburb]
+        else:
+            properties["sports_total"] = "null"
+    
 
     suburb_str = json.dumps(suburbs_json)
     suburb_str.replace('\'', '\"').replace("None", "null")
