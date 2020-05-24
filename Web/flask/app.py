@@ -4,15 +4,15 @@ import couchdb
 app = Flask(__name__)
 couch = couchdb.Server('http://admin:admin123@172.26.132.238:4000//')  # connect to couchdb
 
-@app.route('/')
+@app.route('/web')
 def food_page():
     return render_template('Food_UI.html')
 
-@app.route('/exercise_page')
+@app.route('/web/exercise_page')
 def exercise_page():
     return render_template('Exercise_UI.html')
 
-@app.route('/sleep_page')
+@app.route('/web/sleep_page')
 def sleep_page():
     return render_template('Sleep_UI.html')
 
