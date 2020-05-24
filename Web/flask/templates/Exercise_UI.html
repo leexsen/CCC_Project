@@ -83,7 +83,9 @@
         });
 
         var suburbLayer = new FeatureLayer({
-            url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb_info/FeatureServer/0",
+            portalItem: {  // autocasts as esri/portal/PortalItem
+                id: "9571feb97e5b48a5ba6b8be1d4440927"
+            }
         });
 
         var template = {

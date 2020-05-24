@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <title>Result</title>
     <link rel="stylesheet" type="text/css" href="../static/core.css">
+    <style>
+        #chartdiv1 {
+            width: 95%;
+            height: 400px;
+        }
+    </style>
 </head>
-
 <body>
     <div class="loading">
         <div class="lds-css ng-scope">
@@ -49,9 +54,7 @@
             </div>
                         
         </article>
-                </section>
-    <!--<footer>尾部</footer>-->
-        
+    </section>
 </body>
 </html>
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
@@ -84,7 +87,9 @@
         });
 
         var suburbLayer = new FeatureLayer({
-            url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb_info/FeatureServer/0",
+            portalItem: {  // autocasts as esri/portal/PortalItem
+                id: "2593cb3f2eb34e4caca3014f8370b841"
+            }
         });
 
         var template = {

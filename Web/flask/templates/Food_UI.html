@@ -28,8 +28,8 @@
             </ul>
         </nav>  
     </header>
-        <section>
-                <aside class="aside"> 
+    <section>
+        <aside class="aside"> 
             <ul class="tab">
                 <li><a href="#mapviewDiv">Top</a></li>
                 <li><a href="#australia">Australian Food</a></li>
@@ -41,7 +41,7 @@
                 <li><a href="#korea">Korean Food</a></li>
                 <li><a href="#thai">Thai Food</a></li>
             </ul>
-                </aside>
+        </aside>
         <article class="article">
             <!-- <div id="foods-filter" class="esri-widget">
                 <div class="food-item visible-food" data-food="food_australia">Australian</div>
@@ -58,13 +58,9 @@
                 <div id="titleText">Food</div>
                 <div>Different country Food Heat in suburbs</div>
             </div>
-            <div id="charts"></div>
-                        
-        </article>
-                
+            <div id="charts"></div>          
+        </article>       
     </section>
-    <!--<footer>尾部</footer>-->
-        
 </body>
 
 </html>
@@ -100,7 +96,9 @@
         });
 
         var suburbLayer = new FeatureLayer({
-            url: "https://services3.arcgis.com/GLd5FI430ZgiGlSL/arcgis/rest/services/suburb_info/FeatureServer/0",
+            portalItem: {  // autocasts as esri/portal/PortalItem
+                id: "a6bb1278495f42b58fcae4f17851972e"
+            }
         });
 
         var template = {
