@@ -5,6 +5,10 @@ app = Flask(__name__)
 couch = couchdb.Server('http://admin:admin123@172.26.132.238:4000//')  # connect to couchdb
 
 @app.route('/web')
+def home_page():
+    return render_template('homePage.html')
+
+@app.route('/web/food_page')
 def food_page():
     return render_template('Food_UI.html')
 
