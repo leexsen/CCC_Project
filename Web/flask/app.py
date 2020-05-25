@@ -18,7 +18,6 @@ def sleep_page():
 
 # return the data about final_food database
 @app.route('/food')
-
 def get_food_db():
     db_food = couch['final_food']  # access to database 'final_food'
     dict = {}
@@ -48,6 +47,9 @@ def get_sport_db():
 def get_sleep_db():
     location_time_summary_db = couch['location_time_summary']
     average_person_tweet_view = location_time_summary_db.view('myViews/avarage_person_tweet')
+    average_person_tweet_6_12_view = location_time_summary_db.view('myViews/avarage_person_tweet_6_12')
+    average_person_tweet_12_18_view = location_time_summary_db.view('myViews/avarage_person_tweet_12_18')
+    average_person_tweet_18_24_view = location_time_summary_db.view('myViews/avarage_person_tweet_18_24')
     suburb_median_age = location_time_summary_db.view('myViews/suburb_median_age')
 
     dict = {}
@@ -63,6 +65,24 @@ def get_sleep_db():
         median_age = item.value
         if suburb in dict:
             dict[suburb]['median_age'] = median_age
+
+    for item in average_person_tweet_6_12_view:
+        suburb = item.key.lower()
+        average_person_tweet_6_12 = item.value
+        if suburb in dict:
+            dict[suburb]['average_person_tweet_6_12'] = average_person_tweet_6_12
+
+    for item in average_person_tweet_12_18_view:
+        suburb = item.key.lower()
+        average_person_tweet_12_18 = item.value
+        if suburb in dict:
+            dict[suburb]['average_person_tweet_12_18'] = average_person_tweet_12_18
+
+    for item in average_person_tweet_18_24_view:
+        suburb = item.key.lower()
+        average_person_tweet_18_24 = item.value
+        if suburb in dict:
+            dict[suburb]['average_person_tweet_18_24'] = average_person_tweet_18_24
     return dict
 
 if __name__ == '__main__':
