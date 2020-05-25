@@ -1,0 +1,10 @@
+---
+- name: Create Web replacted service
+  become: yes
+  shell: docker service create \
+            --replicas 1 \
+            --name web \
+            --publish target=5000,published=5000 \
+            --mount type=bind,source=/etc/hosts,destination=/etc/hosts,ro=true \
+            -d lecd64/web
+  when: ansible_hostname == manager_node_hostname
