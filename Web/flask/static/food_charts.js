@@ -55,6 +55,10 @@ am4core.ready(function () {
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         // valueAxis.renderer.minGridDistance=1;
 
+        XAxis.title.text = "percent of Local people";
+        valueAxis.title.text = "percent of country dish talked";
+        // console.log(XAxis.title);
+
         // Create series
         var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.valueY = "food_percent";

@@ -55,6 +55,9 @@ am4core.ready(function () {
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         // valueAxis.renderer.minGridDistance=1;
 
+        XAxis.title.text = "income per year";
+        valueAxis.title.text = "percent of sport talked";
+
         // Create series
         var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.valueY = "exercise_percent";

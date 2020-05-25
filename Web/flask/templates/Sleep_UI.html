@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Result</title>
     <link rel="stylesheet" type="text/css" href="../static/core.css">
     <style>
-        #chartdiv1 {
+        .article charts chartContainer div {
             width: 95%;
-            height: 400px;
+            height: 350px;
         }
     </style>
 </head>
@@ -27,9 +26,9 @@
         <hgroup class="title">Cluster and Cloud Computing</hgroup>
         <nav class="nav">
             <ul>
-                <li><a href="/web" , target="_blank">Food</a></li>
-                <li><a href="exercise_page" , target="_blank">Exercise</a></li>
-                <li>Sleep</a></li>
+                <li><a href="/web" , target="_self">Food</a></li>
+                <li><a href="exercise_page" , target="_self">Exercise</a></li>
+                <li>Sleep</li>
             </ul>
         </nav>     
     </header>
@@ -38,6 +37,10 @@
                     <ul class="tab">
                         <li><a href="#mapviewDiv">Top</a></li>
                         <li><a href="#result">Result</a></li>
+                        <!-- <li><a href="#0_6">0 - 6</a></li>
+                        <li><a href="#6_12">6 - 12</a></li>
+                        <li><a href="#12_18">12 - 18</a></li>
+                        <li><a href="#18_24">18 - 24</a></li> -->
                     </ul>
                 </aside>
         <article class="article">
@@ -47,10 +50,26 @@
                 <div>Relation between Age and tweet time in suburbs</div>
             </div>
             <div id="charts">
-                <div id="chartContainer1" , class="chartContainer">
-                    <h2 id="result">The relation between age and tweet time</h2>
+                <chartContainer id="chartContainer1" , class="chartContainer">
+                    <h2 id="result">The relation between age and tweet time from 0-6am</h2>
                     <div id="chartdiv1"></div>
-                </div>
+                </chartContainer>
+                <!-- <chartContainer id="chartContainer1" , class="chartContainer">
+                    <h2 id="0_6">The relation between age and tweet time from 0-6</h2>
+                    <div id="chartdiv1"></div>
+                </chartContainer> -->
+                <!-- <chartContainer id="chartContainer2" , class="chartContainer">
+                    <h2 id="6_12">The relation between age and tweet time from 6-12</h2>
+                    <div id="chartdiv2"></div>
+                </chartContainer>
+                <chartContainer id="chartContainer3" class="chartContainer">
+                    <h2 id="12_18">The relation between age and tweet time from 12-18</h2>
+                    <div id="chartdiv3"></div>
+                </chartContainer>
+                <chartContainer id="chartContainer4" , class="chartContainer">
+                    <h2 id="18_24">The relation between age and tweet time from 18-24</h2>
+                    <div id="chartdiv4"></div>
+                </chartContainer> -->
             </div>
                         
         </article>

@@ -9,22 +9,67 @@ $.ajax({
         // console.log("result: ", sleep_json);
     }
 });
-console.log(sleep_json);
 am4core.ready(function () {
     // Themes begin
     am4core.useTheme(am4themes_dataviz);
     am4core.useTheme(am4themes_animated);
     // Themes end
 
-    function getDataPoint(jsonStr) {
+    function getDataPoint1(jsonStr) {
         console.log("DataJSON", jsonStr);
-        var data = [];
+        let data = [];
         for (var state in jsonStr) {
             var age = jsonStr[state].median_age;
-            var avg_tweet = jsonStr[state].average_person_tweet;
+            var avg_0_6 = jsonStr[state].average_person_tweet;
+            console.log("avg_tweet",avg_0_6);
             data.push({
                 median_age: age,
-                average_person_tweet: avg_tweet
+                average_person_tweet: avg_0_6
+            });
+        }
+        return data;
+    }
+
+    function getDataPoint2(jsonStr) {
+        console.log("DataJSON", jsonStr);
+        let data = [];
+        for (var state in jsonStr) {
+            var age = jsonStr[state].median_age;
+            var avg_0_6 = jsonStr[state].average_person_tweet_6_12;
+            console.log("avg_tweet",avg_0_6);
+            data.push({
+                median_age: age,
+                average_person_tweet: avg_0_6
+            });
+        }
+        return data;
+    }
+
+    function getDataPoint3(jsonStr) {
+        console.log("DataJSON", jsonStr);
+        let data = [];
+        for (var state in jsonStr) {
+            var age = jsonStr[state].median_age;
+            var avg_0_6 = jsonStr[state].average_person_tweet_12_18;
+            console.log("avg_tweet",avg_0_6);
+            data.push({
+                median_age: age,
+                average_person_tweet: avg_0_6
+            });
+        }
+        return data;
+    }
+
+    function getDataPoint4(jsonStr) {
+        console.log("DataJSON", jsonStr);
+        let data = [];
+        for (var state in jsonStr) {
+            var age = jsonStr[state].median_age;
+            var avg_0_6 = jsonStr[state].average_person_tweet_18_24;
+            console.log("avg_tweet",avg_0_6);
+            data.push({
+                median_age: age,
+                average_person_tweet: avg_0_6
             });
         }
         return data;
@@ -39,6 +84,9 @@ am4core.ready(function () {
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         // valueAxis.renderer.minGridDistance=1;
+
+        valueAxis.title.text = "average tweets per person";
+        XAxis.title.text = "median age";
 
         // Create series
         var series = chart.series.push(new am4charts.ColumnSeries());
@@ -58,6 +106,12 @@ am4core.ready(function () {
         // chart.scrollbarY = new am4core.Scrollbar();
         chart.scrollbarX = new am4core.Scrollbar();
     }
-
-    createXYChart(data = getDataPoint(sleep_json), "chartdiv1");
+    console.log("1");
+    createXYChart(data=getDataPoint1(sleep_json), "chartdiv1");
+    // console.log("2");
+    // createXYChart(data=getDataPoint2(sleep_json), "chartdiv2");
+    // console.log("3");
+    // createXYChart(data=getDataPoint3(sleep_json), "chartdiv3");
+    // console.log("4");
+    // createXYChart(data=getDataPoint4(sleep_json), "chartdiv4");
 });
