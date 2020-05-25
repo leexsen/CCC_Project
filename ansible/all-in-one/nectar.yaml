@@ -23,3 +23,4 @@
     - role: install-couchdb
     - role: install-haproxy
     - role: install-harvester
+    - role: install-web

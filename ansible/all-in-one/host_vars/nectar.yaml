@@ -53,6 +53,13 @@ security_groups:
     port_range_max: 4000
     remote_ip_prefix: 0.0.0.0/0
 
+  - name: web
+    description: "Web service security group"
+    protocol: tcp
+    port_range_min: 5000
+    port_range_max: 5000
+    remote_ip_prefix: 0.0.0.0/0
+
   - name: docker_swarm
     description: "Docker swarm security group"
     protocol: tcp
