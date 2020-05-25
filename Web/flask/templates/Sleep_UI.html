@@ -27,9 +27,9 @@
         <hgroup class="title">Cluster and Cloud Computing</hgroup>
         <nav class="nav">
             <ul>
-                <li><a href="/web" , target="_blank">First</a></li>
-                <li><a href="exercise_page" , target="_blank">Second</a></li>
-                <li>Third</a></li>
+                <li><a href="/web" , target="_blank">Food</a></li>
+                <li><a href="exercise_page" , target="_blank">Exercise</a></li>
+                <li>Sleep</a></li>
             </ul>
         </nav>     
     </header>
@@ -74,7 +74,7 @@
     }
 </script>
 <script>
-    require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", ], function (Map, MapView, FeatureLayer) {
+    require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/widgets/Legend"], function (Map, MapView, FeatureLayer, Legend) {
 
         var map = new Map({
             basemap: "gray"
@@ -83,7 +83,14 @@
             container: "mapviewDiv", // Reference to the scene div created in step 5
             map: map, // Reference to the map object created before the scene
             zoom: 10, // Sets zoom level based on level of detail (LOD)
-            center: [144.96, -37.81] // Sets center point of view using longitude,latitude
+            center: [144.96, -37.81], // Sets center point of view using longitude,latitude
+            popup: {
+                dockEnabled: true,
+                dockOptions: {
+                    buttonEnabled: false,
+                    breakpoint: false
+                }
+            }
         });
 
         var suburbLayer = new FeatureLayer({
@@ -109,9 +116,18 @@
             }]
         };
 
+        var legend = new Legend({
+            view: view,
+            layerInfos: [{
+                layer: suburbLayer,
+                title: "Average tweets per person"
+            }]
+        });
+
         map.add(suburbLayer, 0);
         view.ui.add("titleDiv", "bottom-right");
         suburbLayer.popupTemplate = template;
+        view.ui.add(legend, "bottom-left");
     })
 </script>
 <script src="../static/sleep_chart.js"></script>

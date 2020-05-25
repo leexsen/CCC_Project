@@ -20,9 +20,9 @@
         <hgroup class="title">Cluster and Cloud Computing</hgroup>
         <nav class="nav">
             <ul>
-                <li>First</li>
-                <li><a href="web/exercise_page" , target="_blank">Second</a></li>
-                <li><a href="web/sleep_page" , target="_blank">Third</a></li>
+                <li>Food</li>
+                <li><a href="web/exercise_page" , target="_blank">Exercise</a></li>
+                <li><a href="web/sleep_page" , target="_blank">Sleep</a></li>
             </ul>
         </nav>  
     </header>
@@ -79,8 +79,8 @@
     }
 </script>
 <script>
-    require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/widgets/Expand"], function (Map,
-        MapView, FeatureLayer, Expand) {
+    require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/widgets/Expand", "esri/widgets/Legend"], function (Map,
+        MapView, FeatureLayer, Expand, Legend) {
         let foodLayerView;
         var map = new Map({
             basemap: "gray"
@@ -89,21 +89,34 @@
             container: "mapviewDiv", // Reference to the scene div created in step 5
             map: map, // Reference to the map object created before the scene
             zoom: 10, // Sets zoom level based on level of detail (LOD)
-            center: [145.06, -37.91] // Sets center point of view using longitude,latitude
+            center: [145.06, -37.91], // Sets center point of view using longitude,latitude
+            popup: {
+                dockEnabled: true,
+                dockOptions: {
+                    buttonEnabled: false,
+                    breakpoint: false
+            }
+          }
         });
 
         var suburbLayer = new FeatureLayer({
             portalItem: {  // autocasts as esri/portal/PortalItem
                 id: "a6bb1278495f42b58fcae4f17851972e"
-            }
-        });
-
-        var template = {
-            // NAME and COUNTY are fields in the service containing the Census Tract (NAME) and county of the feature
+            },
+            popupTemplate: {
+            // autocasts as new PopupTemplate()
             title: "{name}",
-            content: [{
-                type: "fields",
-                fieldInfos: [{
+
+            // Set content elements in the order to display.
+            // The first element displayed here is the fieldInfos.
+            content: [
+              {
+                // It is also possible to set the fieldInfos outside of the content
+                // directly in the popupTemplate. If no fieldInfos is specifically set
+                // in the content, it defaults to whatever may be set within the popupTemplate.
+                type: "fields", // FieldsContentElement
+                fieldInfos: [
+                  {
                         fieldName: "food_austrilia",
                         label: "Austrilian Food"
                     },
@@ -132,55 +145,58 @@
                         label: "Thai Food"
                     }
                 ]
+              },
+              {
+                // You can also set a descriptive text element. This element
+                // uses an attribute from the featurelayer which displays a
+                // sentence giving the total amount of trees value within a
+                // specified census block. Text elements can only be set within the content.
+                type: "text", // TextContentElement
+                text:
+                  "There are {food_total} food related tweets within {name}"
+              },
+              {
+                // You can set a media element within the popup as well. This
+                // can be either an image or a chart. You specify this within
+                // the mediaInfos. The following creates a pie chart in addition
+                // to two separate images. The chart is also set up to work with
+                // related tables. Similar to text elements, media can only be set within the content.
+                type: "media", // MediaContentElement
+                mediaInfos: [
+                  {
+                    title: "<b>Distribution of each country food</b>",
+                    type: "pie-chart",
+                    caption: "",
+                    value: {
+                      fields: ["food_austrilia", "food_china","food_korea","food_india","food_greece","food_italy","food_thai",],
+                      normalizeField: null,
+                    //   tooltipField: ""
+                    }
+                  }
+                ]
+              },
+              {
+                // You can set a attachment element(s) within the popup as well.
+                // Similar to text and media elements, attachments can only be set
+                // within the content. Any attachmentInfos associated with the feature
+                // will be listed in the popup.
+                type: "attachments" // AttachmentsContentElement
+              }
+            ]
+          },
+        });
+
+        var legend = new Legend({
+            view: view,
+            layerInfos: [{
+                layer: suburbLayer,
+                title: "Total tweets"
             }]
-        };
+        });
+
         map.add(suburbLayer, 0);
         view.ui.add("titleDiv", "bottom-right");
-        suburbLayer.popupTemplate = template;
-
-        view.popup = {
-            dockEnabled: true,
-            dockOptions: {
-                // Disables the dock button from the popup
-                buttonEnabled: true,
-                // Ignore the default sizes that trigger responsive docking
-                breakpoint: true
-            }
-        };
-
-        const foodNodes = document.querySelectorAll(`.food-item`);
-        const foodElement = document.getElementById("foods-filter");
-
-        // foodElement.addEventListener("click", filterByFood);
-
-        // function filterByFood(event) {
-        //     const selectedSFood = event.target.getAttribute("data-season");
-        //     foodLayerView.filter = {
-        //         where: selectedSFood
-        //     };
-        // }
-
-
-
-        // view.whenLayerView(suburbLayer).then(function (layerView) {
-        //     foodLayerView = layerView;
-        //     // console.log("2", foodLayerView.availableFields);
-
-        //     // foodElement.style.visibility = "visible";
-        //     const foodExpand = new Expand({
-        //         view: view,
-        //         content: foodElement,
-        //         expandIconClass: "esri-icon-filter",
-        //         group: "top-left"
-        //     });
-        //     foodExpand.watch("expanded", function () {
-        //         if (!foodExpand.expanded) {
-        //             foodLayerView.filter = null;
-        //         }
-        //     });
-
-        //     // view.ui.add(foodExpand, "top-left");
-        // });
+        view.ui.add(legend, "bottom-left");
     })
 </script>
 <script src="../static/food_charts.js"></script>

@@ -71,8 +71,13 @@ def get_median_age():
 def get_suburb_food():
     dic = {}
     for id in db_suburb_food:
+        # print("id",id)
+        # print("111",db_suburb_food[id])
+        # print(db_suburb_food[id]['suburb: '])
         suburb = db_suburb_food[id]['suburb: ']
+        # print(suburb)
         total_tweets = db_suburb_food[id]['total tweets: ']
+
         dic[suburb] = total_tweets
     return dic
 
@@ -80,7 +85,8 @@ def get_suburb_sport():
     dic = {}
     for id in db_suburb_sport:
         suburb = db_suburb_sport[id]['suburb: ']
-        total_tweets = db_suburb_sport[id]['total tweets: ']
+        print(id)
+        total_tweets = db_suburb_sport[id]['total_tweets: ']
         dic[suburb] = total_tweets
     return dic
 
@@ -144,7 +150,7 @@ def write2json():
     suburb_str.replace('\'', '\"').replace("None", "null")
     # map_food_db.save(suburbs_json)  # save to mydatabase
 
-    output = open("suburb_info-1589933179300.json", 'w')
+    output = open("suburb_info_test.json", 'w')
     output.write(suburb_str)
 
     # print(suburbs_json1) # the json contains all data
@@ -161,7 +167,7 @@ def updateMap():
     suburb_collection.manager.overwrite('suburb_info-1589933179300.json')
 
 
-write2json()
-print("JSON written")
+# write2json()
+# print("JSON written")
 updateMap()
 print("updated")
