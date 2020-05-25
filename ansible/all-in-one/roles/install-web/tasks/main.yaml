@@ -2,7 +2,7 @@
 - name: Create Web replacted service
   become: yes
   shell: docker service create \
-            --replicas 1 \
+            --replicas 4 \
             --name web \
             --publish target=5000,published=5000 \
             --mount type=bind,source=/etc/hosts,destination=/etc/hosts,ro=true \
