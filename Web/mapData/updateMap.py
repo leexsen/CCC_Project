@@ -86,7 +86,7 @@ def get_suburb_sport():
     dic = {}
     for id in db_suburb_sport:
         suburb = db_suburb_sport[id]['suburb: ']
-        print(id)
+        # print(id)
         total_tweets = db_suburb_sport[id]['total_tweets: ']
         dic[suburb] = total_tweets
     return dic
@@ -166,7 +166,7 @@ def write2json():
     suburb_str.replace('\'', '\"').replace("None", "null")
     # map_food_db.save(suburbs_json)  # save to mydatabase
 
-    output = open("suburb_info_test.json", 'w')
+    output = open("suburb_info-1589933179300.json", 'w')
     output.write(suburb_str)
 
     # print(suburbs_json1) # the json contains all data
