@@ -11,6 +11,7 @@ db_sport = couch["final_sport"]  # access the database "final_sport"
 location_time_summary_db = couch["location_time_summary"]  # access the database location_time_summary
 db_suburb_food = couch["suburb_food"]
 db_suburb_sport = couch["suburb_sport"]
+db_suburb_sleep = couch["suburb_sleep"]
 print("load couchDB")
 print("food", db_food)
 print("sport", db_sport)
@@ -90,6 +91,15 @@ def get_suburb_sport():
         dic[suburb] = total_tweets
     return dic
 
+def get_suburb_sleep():
+    dic = {}
+    suburb_total_view = db_suburb_sleep.view("myViews/suburb_total")
+    for item in suburb_total_view:
+        suburb = item.key.lower()
+        total = item.value
+        dic[suburb] = total
+    return dic
+
 def write2json():
     with open("suburb_info-1589933179300.json") as suburbs:
         suburbs_json = json.load(suburbs)
@@ -144,7 +154,13 @@ def write2json():
             properties["sports_total"] = suburb_sports[suburb]
         else:
             properties["sports_total"] = "null"
-    
+
+        # add suburb_sleep data to suburbs json
+        suburb_sleep = get_suburb_sleep()
+        if suburb in suburb_sleep:
+            properties["sleep_total"] = suburb_sleep[suburb]
+        else:
+            properties["sleep_total"] = "null"
 
     suburb_str = json.dumps(suburbs_json)
     suburb_str.replace('\'', '\"').replace("None", "null")
