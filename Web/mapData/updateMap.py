@@ -1,3 +1,12 @@
+'''
+ # @ Author: Xuan Zhou
+ # @ Create Time: 2020-05-26 20:35:57
+ # @ Modified time: 2020-05-27 11:41:40
+ # @ Description: this file is used to get the newest data from counchDB and
+    update the json file to arcGIS online service to update feature map
+ '''
+
+
 from arcgis.gis import GIS
 from arcgis.features import FeatureLayerCollection
 import couchdb

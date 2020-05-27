@@ -1,3 +1,11 @@
+'''
+ # @ Author: Dewei Yu
+ # @ Create Time: 2020-05-25 13:45:34
+ # @ Modified time: 2020-05-27 11:49:25
+ # @ Description: this is the backend flask file to establish our website.
+ '''
+
+
 from flask import Flask,render_template
 import couchdb
 

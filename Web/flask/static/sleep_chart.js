@@ -1,3 +1,12 @@
+/**
+ * @ Author: Xuan ZHOU
+ * @ Create Time: 2020-05-24 23:22:17
+ * @ Modified time: 2020-05-27 11:44:11
+ * @ Description: this .js is used to get data json from the service and
+ *      use the data to draw all result charts
+ */
+
+
 let sleep_json = {};
 $.ajax({
     url: '/sleep',
